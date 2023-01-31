@@ -41,12 +41,12 @@
           <v-col cols="3">
             <v-row>
               <v-col cols="12">
-                <v-card loading="" title="Card title" text="..."></v-card>
+                <ProfileMonograph></ProfileMonograph>
               </v-col>
             </v-row>
             <v-row>
               <v-col cols="12">
-                <v-card loading="" title="Card title" text="..."></v-card>
+                <NavMonograph></NavMonograph>
               </v-col>
             </v-row>
             <v-row>
@@ -58,7 +58,7 @@
           <!-- SIDE CONTENT -->
 
           <!-- MAIN CONTENT -->
-          <v-col cols="9"> <MenuStunting></MenuStunting> </v-col>
+          <v-col cols="9"> <MonographMain></MonographMain> </v-col>
           <!-- MAIN CONTENT -->
         </v-row>
         <!-- row 1 -->
@@ -81,6 +81,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import SubNav from "@/components/navigation/SubNav.vue";
+import ProfileMonograph from "@/components/monograph/ProfileMonograph.vue";
+import NavMonograph from "@/components/monograph/NavMonograph.vue";
 import MonographMain from "@/components/layouts/monograph-contents/MonographMain.vue";
 import MenuKemiskinan from "@/components/layouts/monograph-contents/MenuKemiskinan.vue";
 import MenuStunting from "@/components/layouts/monograph-contents/MenuStunting.vue";

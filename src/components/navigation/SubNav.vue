@@ -10,17 +10,22 @@ import { ref } from "vue";
 
 const items = ref([
   {
-    title: "Dashboard",
+    title: "Provinsi:",
     disabled: false,
     href: "breadcrumbs_dashboard",
   },
   {
-    title: "Link 1",
+    title: "Kab/Kota:",
+    disabled: false,
+    href: "breadcrumbs_dashboard",
+  },
+  {
+    title: "Kecamatan:",
     disabled: false,
     href: "breadcrumbs_link_1",
   },
   {
-    title: "Link 2",
+    title: "Desa:",
     disabled: true,
     href: "breadcrumbs_link_2",
   },

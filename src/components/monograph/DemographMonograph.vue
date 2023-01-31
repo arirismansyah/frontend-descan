@@ -1,12 +1,12 @@
 <template>
-  <v-card>
+  <v-card elevation="8">
     <v-card-title>
       <strong>Demografi</strong>
     </v-card-title>
     <v-card-subtitle>Nama Wilayah</v-card-subtitle>
     <v-card-text>
       <Doughnut :data="data" :config="config" />
-      <canvas id="barChart"></canvas>
+      <canvas style="height: 500px" id="barChart"></canvas>
     </v-card-text>
   </v-card>
 </template>

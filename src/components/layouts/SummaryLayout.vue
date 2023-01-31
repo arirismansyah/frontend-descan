@@ -56,8 +56,8 @@
         <!-- row 2 -->
 
         <!-- row 3 -->
-        <v-row class="d-flex">
-          <v-col cols="8">
+        <v-row class="d-flex align-stretch">
+          <v-col cols="8" height="100%">
             <v-row>
               <v-col cols="12">
                 <MapSummary></MapSummary>
@@ -69,8 +69,13 @@
               </v-col>
             </v-row>
           </v-col>
-          <v-col cols="4" class="align-self-auto">
-            <DemographSummary></DemographSummary>
+          <v-col cols="4" fill-height class="align-self-auto">
+            <!-- <v-col cols="12"> -->
+            <DemographSummary
+              class="align-self-auto"
+              style="height: 100%"
+            ></DemographSummary>
+            <!-- </v-col> -->
           </v-col>
         </v-row>
         <!-- row 3 -->

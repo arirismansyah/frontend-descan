@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card elevation="8">
     <v-card-title>
       <strong>Batas Wilayah</strong>
     </v-card-title>
