@@ -1,3 +1,35 @@
+<script>
+    import axios from 'axios'
+	import UnitLogo from "@/components/landing/UnitLogo.vue";
+
+	export default {
+        data() {
+            return {
+                kabKota: [],
+                urlApi: this.urlApi
+            }
+        },
+        components:{ 
+            UnitLogo,
+        },
+        methods : {
+            async getKabKota(){
+                await axios
+                    .get(`${this.urlApi}wilayah/16`)
+                    .then(({data})=>{
+                        this.kabKota = data.datas
+						console.log(this.kabKota)
+                    }).catch(({ response })=>{
+                        console.error(response)
+                    })
+            },
+        },
+        created() {
+            this.getKabKota();
+        }
+    }
+</script>
+
 <template>
   <section
     class="wrapper image-wrapper bg-image bg-overlay bg-overlay-300"
@@ -63,12 +95,12 @@
             <figure
               class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
             >
-              <a href="/summary">
+              <a href="/summary/16">
                 <img
                   class="img-responsive"
-                  src="https://webapps.bps.go.id/sumsel/tematik/images/logo1600.png"
+                  src="@/assets/images/prov-logo/logo1600.png"
                   alt=""
-                  style="max-height: 150px; width: auto" /><span
+                  style="max-height:150px; width: auto" /><span
                   class="bg"
                 ></span
               ></a>
@@ -99,431 +131,9 @@
       <div class="row gx-md-5 gy-5 mt-n19 mb-14 mb-md-17" style="height: 200px">
         <div class="col-12 grid-margin stretch-card">
           <div class="d-sm-flex justify-content-between align-items-start">
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="Ogan Komering Ulu"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1601.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="Ogan Komering Ilir"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1602.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="Muara Enim"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1603.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="Lahat"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1604.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="Musi Rawas"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1605.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="Musi Banyuasin"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1606.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="Banyu Asin"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1607.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="OKU Selatan"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1608.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="OKU Timur"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1609.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="Ogan Ilir"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1610.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="Empat Lawang"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1611.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="PALI"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1612.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="Musi Rawas Utara"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1613.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="Palembang"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1671.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="Prabumulih"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1672.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="Pagar Alam"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1673.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <div class="card mx-1">
-              <div class="card-body px-3 py-3">
-                <figure
-                  class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title=""
-                  data-bs-original-title="Lubuk Linggau"
-                >
-                  <a href="/summary">
-                    <img
-                      class="img-responsive"
-                      src="https://webapps.bps.go.id/sumsel/tematik/images/logo1674.png"
-                      alt=""
-                      style="max-height: 80px; width: auto" /><span
-                      class="bg"
-                    ></span
-                  ></a>
-                  <figcaption>
-                    <small class="mdi md-map from-top"></small>
-                  </figcaption>
-                </figure>
-              </div>
-              <!--/.card-body -->
-            </div>
+
+		  	<UnitLogo v-for="data in kabKota" :key="data.idKab" :kodeWilayah="data.idProv+data.idKab" :name="data.name" />
+            
           </div>
         </div>
       </div>
@@ -533,8 +143,7 @@
     <!-- /.container -->
   </div>
 </template>
-<script></script>
-<style scoped>
+<style>
 @charset "UTF-8"; /*!
 Theme Name: Sandbox - Modern & Multipurpose Bootstrap 5 Template
 Theme URI:	https://sandbox.elemisthemes.com/

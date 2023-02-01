@@ -23,4 +23,7 @@ app.use(vuetify);
 app.use(createPinia());
 app.use(router);
 
+
+app.config.globalProperties.urlApi = "https://descan.bpssumsel.com/api/";
+
 app.mount("#app");
