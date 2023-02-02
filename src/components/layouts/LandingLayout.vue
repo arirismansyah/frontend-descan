@@ -1,33 +1,32 @@
 <script>
-    import axios from 'axios'
+  import axios from 'axios'
 	import UnitLogo from "@/components/landing/UnitLogo.vue";
 
 	export default {
-        data() {
-            return {
-                kabKota: [],
-                urlApi: this.urlApi
-            }
-        },
-        components:{ 
-            UnitLogo,
-        },
-        methods : {
-            async getKabKota(){
-                await axios
-                    .get(`${this.urlApi}wilayah/16`)
-                    .then(({data})=>{
-                        this.kabKota = data.datas
-						console.log(this.kabKota)
-                    }).catch(({ response })=>{
-                        console.error(response)
-                    })
-            },
-        },
-        created() {
-            this.getKabKota();
-        }
-    }
+      data() {
+          return {
+              kabKota: [],
+              urlApi: this.urlApi
+          }
+      },
+      components:{ 
+          UnitLogo,
+      },
+      methods : {
+          async getKabKota(){
+              await axios
+                  .get(`${this.urlApi}wilayah/16`)
+                  .then(({data})=>{
+                      this.kabKota = data.datas
+                  }).catch(({ response })=>{
+                      console.error(response)
+                  })
+          },
+      },
+      created() {
+          this.getKabKota();
+      }
+  }
 </script>
 
 <template>

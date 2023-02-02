@@ -30,7 +30,7 @@
 
     <v-main>
       <!-- SUB NAV WILAYAH -->
-      <SubNav></SubNav>
+      <SubNav :kode="props.kode"></SubNav>
       <!-- SUB NAV WILAYAH -->
 
       <!-- MAIN CONTENT -->
@@ -104,23 +104,45 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import SubNav from "@/components/navigation/SubNav.vue";
-import DescSummary from "../summary/DescSummary.vue";
-import GeneralSummary from "../summary/GeneralSummary.vue";
-import EduSummary from "../summary/EduSummary.vue";
-import MapSummary from "../summary/MapSummary.vue";
-import DemographSummary from "../summary/DemographSummary.vue";
-import EmploySummary from "../summary/EmploySummary.vue";
+  	import { ref, onMounted, inject } from "vue";
+  	import axios from 'axios'
+	import { storeToRefs } from 'pinia'
+	import { useMonografWilayahStore } from '@/stores/monografWilayah'
 
-const theme = ref("light");
-const fullscreen = ref("false");
+	import SubNav from "@/components/navigation/SubNav.vue";
+	import DescSummary from "../summary/DescSummary.vue";
+	import GeneralSummary from "../summary/GeneralSummary.vue";
+	import EduSummary from "../summary/EduSummary.vue";
+	import MapSummary from "../summary/MapSummary.vue";
+	import DemographSummary from "../summary/DemographSummary.vue";
+	import EmploySummary from "../summary/EmploySummary.vue";
+	
+	const monografStore = useMonografWilayahStore()
 
-function changeTheme() {
-  theme.value = theme.value === "light" ? "dark" : "light";
-}
+	const props = defineProps({ kode: String })
+	const urlApi = inject('urlApi')
+	const theme = ref("light");
+	const fullscreen = ref("false");
 
-function fullScreenBrowser() {
-  fullscreen.value = fullscreen.value === "true" ? "false" : "true";
-}
+	function changeTheme() {
+		theme.value = theme.value === "light" ? "dark" : "light";
+	}
+
+	function fullScreenBrowser() {
+		fullscreen.value = fullscreen.value === "true" ? "false" : "true";
+	}
+
+	async function loadWilayah(){
+		await axios
+			.get(`${urlApi}wilayah/${props.kode}/show`)
+			.then(({data})=>{
+				monografStore.setWilayah(data.datas.result, data.datas.info_induk);
+			}).catch(({ response })=>{
+				console.error(response)
+			})
+	}
+
+	onMounted(() => {
+		loadWilayah();
+	})
 </script>
