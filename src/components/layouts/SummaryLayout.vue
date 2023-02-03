@@ -16,10 +16,8 @@
         <v-btn variant="text">Peta Tematik</v-btn>
       </v-toolbar-items>
       <v-spacer></v-spacer>
-      <v-btn
-        :icon="fullscreen === 'true' ? 'mdi-fullscreen-exit' : 'mdi-fullscreen'"
-        @click="fullScreenBrowser()"
-      ></v-btn>
+      <v-btn :icon="fullscreen === 'true' ? 'mdi-fullscreen-exit' : 'mdi-fullscreen'"
+        @click="fullScreenBrowser()"></v-btn>
 
       <v-btn
         :icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'"
@@ -71,10 +69,7 @@
           </v-col>
           <v-col cols="4" fill-height class="align-self-auto">
             <!-- <v-col cols="12"> -->
-            <DemographSummary
-              class="align-self-auto"
-              style="height: 100%"
-            ></DemographSummary>
+            <DemographSummary class="align-self-auto" style="height: 100%"></DemographSummary>
             <!-- </v-col> -->
           </v-col>
         </v-row>

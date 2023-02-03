@@ -3,7 +3,7 @@
     <v-card-title>
       <strong>Deskripsi</strong>
     </v-card-title>
-    <v-card-subtitle>{{ labelWilayah }} {{ infoWilayah.nama }}</v-card-subtitle>
+    <v-card-subtitle v-if="infoWilayah">{{ labelWilayah }} {{ infoWilayah.nama }}</v-card-subtitle>
     <v-card-text>
       <v-row class="d-flex justify-center">
         <v-col cols="12" class="d-flex justify-center">
@@ -16,7 +16,7 @@
       </v-row>
       <v-row>
         <v-col cols="12" class="d-flex justify-center align-center">
-          <h3>{{ labelWilayah }} {{ infoWilayah.nama }}</h3>
+          <h3 v-if="infoWilayah">{{ labelWilayah }} {{ infoWilayah.nama }}</h3>
         </v-col>
       </v-row>
       <v-row>
@@ -28,6 +28,7 @@
     </v-card-text>
   </v-card>
 </template>
+
 <script setup lang="ts">
   	import { ref, computed, onMounted  } from "vue";
 	import { storeToRefs } from 'pinia'

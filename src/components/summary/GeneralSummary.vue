@@ -3,7 +3,7 @@
     <v-card-title>
       <strong>Informasi Umum</strong>
     </v-card-title>
-    <v-card-subtitle>Nama Wilayah</v-card-subtitle>
+    <v-card-subtitle v-if="infoWilayah">{{ labelWilayah }} {{ infoWilayah.nama }}</v-card-subtitle>
     <v-card-text>
       <v-tabs v-model="tab" color="deep-purple-accent-4" align-tabs="start">
         <v-tab value="1">Informasi Umum</v-tab>
@@ -56,44 +56,48 @@
   </v-card>
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
-const tab = ref(null);
+  	import { ref, computed, onMounted  } from "vue";
+	import { storeToRefs } from 'pinia'
+	import { useMonografWilayahStore } from '@/stores/monografWilayah'
+	const tab = ref(null);
 
-const data_wilayah = ref([
-  {
-    name: "Nama Daerah",
-    value: "Kota A",
-  },
-  {
-    name: "Tahun Pembentukkan",
-    value: "1976",
-  },
-  {
-    name: "Dasar Pembentukan",
-    value: "UU No XX Tahun XXXX",
-  },
-  {
-    name: "Luas Wilayah",
-    value: 305,
-  },
-]);
+  	const { infoWilayah, labelWilayah } = storeToRefs(useMonografWilayahStore())
 
-const data_pengurus = ref([
-  {
-    jabatan: "Kepala Daerah",
-    nama: "Bpk. Kepala A",
-  },
-  {
-    jabatan: "Wakil Kepala Daerah",
-    nama: "Bpk. Wakil A",
-  },
-  {
-    jabatan: "Sekertaris Daerah",
-    nama: "Bpk. Sekda A",
-  },
-  {
-    jabatan: "Pengurus Daerah A",
-    nama: "Bpk. Pengurus A",
-  },
-]);
+	const data_wilayah = ref([
+	{
+		name: "Nama Daerah",
+		value: "Kota A",
+	},
+	{
+		name: "Tahun Pembentukkan",
+		value: "1976",
+	},
+	{
+		name: "Dasar Pembentukan",
+		value: "UU No XX Tahun XXXX",
+	},
+	{
+		name: "Luas Wilayah",
+		value: 305,
+	},
+	]);
+
+	const data_pengurus = ref([
+	{
+		jabatan: "Kepala Daerah",
+		nama: "Bpk. Kepala A",
+	},
+	{
+		jabatan: "Wakil Kepala Daerah",
+		nama: "Bpk. Wakil A",
+	},
+	{
+		jabatan: "Sekertaris Daerah",
+		nama: "Bpk. Sekda A",
+	},
+	{
+		jabatan: "Pengurus Daerah A",
+		nama: "Bpk. Pengurus A",
+	},
+	]);
 </script>

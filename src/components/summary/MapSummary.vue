@@ -3,9 +3,8 @@
     <v-card-title>
       <strong>Batas Wilayah</strong>
     </v-card-title>
-    <v-card-subtitle>Nama Wilayah</v-card-subtitle>
+    <v-card-subtitle v-if="infoWilayah">{{ labelWilayah }} {{ infoWilayah.nama }}</v-card-subtitle>
     <v-card-text>
-      <!-- map -->
       <v-row>
         <v-col cols="12" id="mapid" class="d-flex" style="height: 400px">
         </v-col>
@@ -13,15 +12,17 @@
     </v-card-text>
   </v-card>
 </template>
-<script lang="ts">
-import { ref, onMounted } from "vue";
 
-import leaflet from "leaflet";
+<script setup lang="ts">
+  	import { ref, computed, onMounted  } from "vue";
+	import { storeToRefs } from 'pinia'
+	import { useMonografWilayahStore } from '@/stores/monografWilayah'
+	import leaflet from "leaflet";
 
-export default {
-  setup() {
+  	const { infoWilayah, labelWilayah } = storeToRefs(useMonografWilayahStore())
     let mymap;
-    onMounted(() => {
+
+	onMounted(() => {
       mymap = leaflet.map("mapid").setView([-2.9655006, 104.7335063], 13);
       leaflet
         .tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -38,7 +39,5 @@ export default {
           radius: 2000,
         })
         .addTo(mymap);
-    });
-  },
-};
+	})
 </script>
