@@ -18,6 +18,7 @@
                   .get(`${this.urlApi}wilayah/16`)
                   .then(({data})=>{
                       this.kabKota = data.datas
+                      console.log(this.kabKota)
                   }).catch(({ response })=>{
                       console.error(response)
                   })
@@ -99,7 +100,7 @@
                   class="img-responsive"
                   src="@/assets/images/prov-logo/logo1600.png"
                   alt=""
-                  style="max-height:150px; width: auto" /><span
+                  style="max-height:200px; width: auto" /><span
                   class="bg"
                 ></span
               ></a>
@@ -131,7 +132,7 @@
         <div class="col-12 grid-margin stretch-card">
           <div class="d-sm-flex justify-content-between align-items-start">
 
-		  	<UnitLogo v-for="data in kabKota" :key="data.idKab" :kodeWilayah="data.idProv+data.idKab" :name="data.name" />
+		  	<UnitLogo v-for="data in kabKota" :key="data.kode_kab" :kodeWilayah="data.kode_prov+data.kode_kab" :name="data.nama" />
             
           </div>
         </div>
