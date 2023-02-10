@@ -13,8 +13,8 @@ import * as directives from "vuetify/directives";
 import "@mdi/font/css/materialdesignicons.css";
 
 const vuetify = createVuetify({
-  components,
-  directives,
+    components,
+    directives,
 });
 
 const app = createApp(App);
@@ -22,7 +22,6 @@ const app = createApp(App);
 app.use(vuetify);
 app.use(createPinia());
 app.use(router);
-
 
 app.config.globalProperties.urlApi = "https://descan.bpssumsel.com/api/";
 app.provide('urlApi',"https://descan.bpssumsel.com/api/");

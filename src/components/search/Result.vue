@@ -7,7 +7,7 @@
 						{{ props.nama }}
 					</v-list-item-title>
 
-					<v-list-item-subtitle>{{ props.rincian }}</v-list-item-subtitle>
+					<v-list-item-subtitle>{{ labelLevel }}</v-list-item-subtitle>
 				</v-list-item-content>
 			</v-list-item>
 		</v-card>
@@ -15,15 +15,48 @@
 </template>
 
 <script setup>
-  	import { onMounted } from "vue";
+  	import { onMounted, computed } from "vue";
 	const props = defineProps({ 
 			kode: String, 
-			nama: String, 
-			rincian: String
+			nama: String,
 		})
 
+	const labelLevel = computed(() => {
+		let result = "TTTEEEESS";
+		console.log(props.nama)
+		// console.log(props.kode.substring(8, 11))
+		if(props.kode.substring(7, 10)!='000'){
+			return 'Desa/Kelurahan';
+		}
+		else if(props.kode.substring(4, 7)!='000'){
+			return 'Kecamatan';
+		}
+		else if(props.kode.substring(2, 4!='00')){
+			return 'Kabupaten/Kota';
+		}
+		else{
+			return 'Provinsi';
+		}
 
-	onMounted(() => {
-		console.log(props);
+		// switch(i) {
+		// 	case 0:
+		// 		title = "Provinsi";
+		// 		break;
+		// 	case 1:
+		// 		let kodeKabKota = props.kode.substring(2, 3);
+		// 		if(kodeKabKota=="7") title = "Kota";
+		// 		else title = "Kabupaten";
+		// 		break;
+		// 	case 2:
+		// 		title = "Kecamatan";
+		// 		break;
+		// 	case 3:
+		// 		title = "Desa/Kelurahan";
+		// 		break;
+		// 	default:
+		// 		title = "Provinsi";
+		// }
+
+		return result;
 	})
 </script>

@@ -32,13 +32,11 @@
 <script setup>
     import { ref } from 'vue'
 	import { useRouter } from 'vue-router'
-    
 
     const router = useRouter()
     const keyword = ref("");
 
 	function searchWilayah(){
-        console.log(keyword.value)
         if(keyword.value=='') router.push({name: 'search'})
         else router.push({name: 'search', query: { keyword: keyword.value }})
 	}

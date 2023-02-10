@@ -8,12 +8,13 @@
 					<v-col cols="2"></v-col>
 					<v-col cols="8">
 						<input type="text" class="form-control mb-8 border border-dark" 
-							v-model="keyword" 
-							v-on:keyup.enter="searchWilayah"
+							v-model="propsShadow.keyword"
+							v-on:keyup.enter="loadSearchWilayah"
 							placeholder="Cari wilayah...">
 
-						<Result nama="Ogan Komering Ilir" rincian="Provinsi Sumatera Selatan Kabupaten ..." />
-						<Result nama="Ogan Komering Ulu" rincian="Provinsi Sumatera Selatan Kabupaten ..." />
+		  				<Result v-for="(data, idx) in state.wilayahs" :key="idx" 
+						   	:kode="(data.kode_prov+data.kode_kab+data.kode_kec+data.kode_desa)"
+						  	:nama="data.nama"/>
 					</v-col>
 					<v-col cols="2"></v-col>
 				</v-row>
@@ -25,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-  	import { ref, onMounted, inject } from "vue";
+  	import { ref, reactive, onMounted, inject } from "vue";
   	import axios from 'axios'
 
 	import Header from "@/components/general/Header.vue";
@@ -36,6 +37,16 @@
 	const theme = ref("light");
 	const fullscreen = ref("false");
 
+	let props = defineProps({ 
+		keyword: String,
+	})
+
+	const state = reactive({
+		wilayahs: []
+	});
+
+	let propsShadow = Object.assign({}, props)
+
 	function changeTheme() {
 		theme.value = theme.value === "light" ? "dark" : "light";
 	}
@@ -44,6 +55,23 @@
 		fullscreen.value = fullscreen.value === "true" ? "false" : "true";
 	}
 
+	async function loadSearchWilayah(){
+		await axios.post(`${urlApi}wilayah/search`, {
+					keyword: propsShadow.keyword,
+				}).
+				then(({data}) => {
+					console.log(propsShadow.keyword)
+					if(data.status=='success'){
+						state.wilayahs = data.datas;
+						console.log(wilayahs)
+					}
+					else{
+						console.log("Data gagal disimpan, silahkan ulangi lagi")
+					}
+				});
+	}
+
 	onMounted(() => {
+		loadSearchWilayah();
 	})
 </script>
