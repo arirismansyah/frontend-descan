@@ -17,11 +17,11 @@ const router = createRouter({
 			name: "summary",
 			component: SummaryView,
 		},
-		{
-			path: "/monograph",
-			name: "monograph",
-			component: MonographView,
-		},
+		// {
+		// 	path: "/monograph",
+		// 	name: "monograph",
+		// 	component: MonographView,
+		// },
 		{
 			path: "/search",
 			name: "search",

@@ -2,63 +2,89 @@
 	<v-app :theme="theme">
 		<Header />
 		<v-main>
-		<!-- SUB NAV WILAYAH -->
-		<SubNav :kode="props.kode"></SubNav>
-		<!-- SUB NAV WILAYAH -->
-
-		<!-- MAIN CONTENT -->
-		<v-container fluid ma-0 pa-0 fill-height>
-			<!-- row 1 -->
-			<v-row>
-				<v-col cols="12">
-					<!-- DESC -->
-					<DescSummary></DescSummary>
-					<!-- DESC -->
-				</v-col>
-			</v-row>
-			<!-- row 1 -->
-
-			<!-- row 2 -->
-			<v-row>
-			<v-col cols="12">
-				<!-- INFORMASI UMUM -->
-				<GeneralSummary></GeneralSummary>
-				<!-- INFORMASI UMUM -->
-			</v-col>
-			</v-row>
-			<!-- row 2 -->
-
-			<!-- row 3 -->
-			<v-row class="d-flex align-stretch">
-			<v-col cols="8" height="100%">
+			<!-- SUB NAV WILAYAH -->
+			<SubNav :kode="props.kode"></SubNav>
+			<!-- SUB NAV WILAYAH -->
+			
+			<!-- MAIN CONTENT -->
+			<v-container fluid ma-0 pa-0 fill-height>
 				<v-row>
-				<v-col cols="12">
-					<MapSummary></MapSummary>
-				</v-col>
-				</v-row>
-				<v-row>
-				<v-col cols="12">
-					<EduSummary></EduSummary>
-				</v-col>
-				</v-row>
-			</v-col>
-			<v-col cols="4" fill-height class="align-self-auto">
-				<!-- <v-col cols="12"> -->
-				<DemographSummary class="align-self-auto" style="height: 100%"></DemographSummary>
-				<!-- </v-col> -->
-			</v-col>
-			</v-row>
-			<!-- row 3 -->
+					<!-- SIDE CONTENT -->
+					<v-col cols="3">
+						<v-row>
+							<v-col cols="12">
+								<ProfileMonograph />
+							</v-col>
+						</v-row>
+						<v-row>
+							<v-col cols="12">
+								<InformasiUmum />
+							</v-col>
+						</v-row>
+						
+						<v-row>
+							<v-col cols="12">
+								<NavMonograph></NavMonograph>
+							</v-col>
+						</v-row>
+					</v-col>
+					<!-- SIDE CONTENT -->
 
-			<!-- row 4 -->
-			<v-row>
-			<v-col cols="12">
-				<EmploySummary></EmploySummary>
-			</v-col>
-			</v-row>
-			<!-- row 4 -->
-		</v-container>
-		<!-- MAIN CONTENT -->
+					<!-- MAIN CONTENT -->
+					<v-col cols="9"> 
+						<!-- row 1 -->
+						<v-row>
+							<v-col cols="12">
+								<DescSummary></DescSummary>
+							</v-col>
+						</v-row>
+						<!-- row 1 -->
+
+						<!-- row 2 -->
+						<v-row>
+							<v-col cols="12">
+								<!-- INFORMASI UMUM -->
+								<GeographySummary></GeographySummary>
+								<!-- INFORMASI UMUM -->
+							</v-col>
+						</v-row>
+						<!-- row 2 -->
+
+						<!-- row 3 -->
+						<v-row class="d-flex align-stretch">
+							<v-col cols="8" height="100%">
+								<v-row>
+								<v-col cols="12">
+									<MapSummary></MapSummary>
+								</v-col>
+								</v-row>
+								<v-row>
+								<v-col cols="12">
+									<EduSummary></EduSummary>
+								</v-col>
+								</v-row>
+							</v-col>
+							<v-col cols="4" fill-height class="align-self-auto">
+								<!-- <v-col cols="12"> -->
+								<DemographSummary class="align-self-auto" style="height: 100%"></DemographSummary>
+								<!-- </v-col> -->
+							</v-col>
+						</v-row>
+						<!-- row 3 -->
+
+						<!-- row 4 -->
+						<v-row>
+							<v-col cols="12">
+								<EmploySummary></EmploySummary>
+							</v-col>
+						</v-row>
+						<!-- row 4 -->
+					</v-col>
+					<!-- MAIN CONTENT -->
+				</v-row>
+
+			</v-container>
+			<!-- MAIN CONTENT -->
 		</v-main>
 
 		<Footer/>
@@ -75,12 +101,20 @@
 	import Header from "../general/Header.vue";
 	import Footer from "../general/Footer.vue";
 	import SubNav from "@/components/navigation/SubNav.vue";
+
 	import DescSummary from "../summary/DescSummary.vue";
-	import GeneralSummary from "../summary/GeneralSummary.vue";
+	import GeographySummary from "../summary/GeographySummary.vue";
 	import EduSummary from "../summary/EduSummary.vue";
 	import MapSummary from "../summary/MapSummary.vue";
 	import DemographSummary from "../summary/DemographSummary.vue";
 	import EmploySummary from "../summary/EmploySummary.vue";
+	import InformasiUmum from "../summary/InformasiUmum.vue";
+
+	import ProfileMonograph from "../summary/ProfileMonograph.vue";
+	import NavMonograph from "../summary/NavMonograph.vue";
+	import MenuKemiskinan from "../summary/MenuKemiskinan.vue";
+	import MenuStunting from "../summary/MenuStunting.vue";
+	import MenuUmkm from "../summary/MenuUmkm.vue";
 	
 	const monografStore = useMonografWilayahStore()
 

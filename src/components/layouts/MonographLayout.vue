@@ -81,11 +81,11 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import SubNav from "@/components/navigation/SubNav.vue";
-import ProfileMonograph from "@/components/monograph/ProfileMonograph.vue";
-import NavMonograph from "@/components/monograph/NavMonograph.vue";
-import MonographMain from "@/components/layouts/monograph-contents/MonographMain.vue";
-import MenuKemiskinan from "@/components/layouts/monograph-contents/MenuKemiskinan.vue";
-import MenuStunting from "@/components/layouts/monograph-contents/MenuStunting.vue";
+import ProfileMonograph from "@/components/summary/ProfileMonograph.vue";
+import NavMonograph from "@/components/summary/NavMonograph.vue";
+import MonographMain from "@/components/summary/MonographMain.vue";
+import MenuKemiskinan from "@/components/summary/MenuKemiskinan.vue";
+import MenuStunting from "@/components/summary/MenuStunting.vue";
 
 const theme = ref("light");
 const fullscreen = ref("false");

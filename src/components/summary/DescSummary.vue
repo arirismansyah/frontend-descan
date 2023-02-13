@@ -1,5 +1,5 @@
 <template>
-	<v-card>
+	<v-card elevation="8">
 		<v-card-text>
 			<v-row class="d-flex justify-center mb-8">
 				<template v-if="infoWilayah">
