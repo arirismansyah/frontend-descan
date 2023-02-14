@@ -25,7 +25,7 @@
 
 			<v-row>
 				<v-col cols="12" class="d-flex justify-center align-center">
-				<h3 v-if="infoWilayah">{{ labelWilayah }} {{ infoWilayah.nama }}</h3>
+				<h3 v-if="infoWilayah">{{ labelWilayah.current }} {{ infoWilayah.nama }}</h3>
 				</v-col>
 			</v-row>
 

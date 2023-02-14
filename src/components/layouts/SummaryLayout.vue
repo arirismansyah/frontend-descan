@@ -1,10 +1,9 @@
 <template>
 	<v-app :theme="theme">
 		<Header />
+		
 		<v-main>
-			<!-- SUB NAV WILAYAH -->
 			<SubNav :kode="props.kode"></SubNav>
-			<!-- SUB NAV WILAYAH -->
 			
 			<!-- MAIN CONTENT -->
 			<v-container fluid ma-0 pa-0 fill-height>
@@ -44,7 +43,7 @@
 						<v-row>
 							<v-col cols="12">
 								<!-- INFORMASI UMUM -->
-								<GeographySummary></GeographySummary>
+								<AdministrasiSummary></AdministrasiSummary>
 								<!-- INFORMASI UMUM -->
 							</v-col>
 						</v-row>
@@ -103,7 +102,7 @@
 	import SubNav from "@/components/navigation/SubNav.vue";
 
 	import DescSummary from "../summary/DescSummary.vue";
-	import GeographySummary from "../summary/GeographySummary.vue";
+	import AdministrasiSummary from "../summary/AdministrasiSummary.vue";
 	import EduSummary from "../summary/EduSummary.vue";
 	import MapSummary from "../summary/MapSummary.vue";
 	import DemographSummary from "../summary/DemographSummary.vue";
@@ -135,7 +134,18 @@
 		await axios
 			.get(`${urlApi}wilayah/${props.kode}/show`)
 			.then(({data})=>{
-				monografStore.setWilayah(data.datas.result, data.datas.info_induk);
+				monografStore.setWilayah(
+					data.datas.result, 
+					data.datas.info_induk, 
+					data.datas.info_child);
+			}).catch(({ response })=>{
+				console.error(response)
+			})
+
+		await axios
+			.get(`${urlApi}pengurus/${props.kode}/last`)
+			.then(({data})=>{
+				monografStore.setPengurus(data.datas);
 			}).catch(({ response })=>{
 				console.error(response)
 			})

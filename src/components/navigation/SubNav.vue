@@ -46,7 +46,7 @@
 
 		if(monografStore.infoWilayah!=null){
 			result.push({
-				title: `${monografStore.labelWilayah}: ${monografStore.infoWilayah.nama}` ,
+				title: `${monografStore.labelWilayah.current}: ${monografStore.infoWilayah.nama}` ,
 				disabled: false,
 				href: "breadcrumbs_dashboard",
 			});
