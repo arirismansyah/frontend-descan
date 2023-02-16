@@ -9,7 +9,7 @@
 			<v-container fluid ma-0 pa-0 fill-height>
 				<v-row>
 					<!-- RIGHT CONTENT -->
-					<RightNav jenis="summary" :kode="props.kode" />
+					<RightNav jenis="kemiskinan"  :kode="props.kode" />
 					<!-- RIGHT CONTENT -->
 
 					<!-- MAIN CONTENT -->
@@ -79,7 +79,6 @@
 	import { storeToRefs } from 'pinia'
 
 	import { useMonografWilayahStore } from '@/stores/monografWilayah'
-	import { usePengurusStore } from '@/stores/pengurusWilayah'
 
 	import Header from "@/components/navigation/Header.vue";
 	import Footer from "@/components/navigation/Footer.vue";
@@ -98,7 +97,6 @@
 	import MenuUmkm from "../summary/MenuUmkm.vue";
 	
 	const monografStore = useMonografWilayahStore()
-	const pengurusStore = usePengurusStore()
 
 	const props = defineProps({ kode: String })
 	const urlApi = inject('urlApi')
@@ -126,9 +124,9 @@
 			})
 
 		await axios
-			.get(`${urlApi}pengurus/${props.kode}/list`)
+			.get(`${urlApi}pengurus/${props.kode}/last`)
 			.then(({data})=>{
-				pengurusStore.setPengurus(data.datas.data);
+				monografStore.setPengurus(data.datas);
 			}).catch(({ response })=>{
 				console.error(response)
 			})

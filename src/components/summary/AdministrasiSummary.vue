@@ -20,23 +20,23 @@
 					<v-container fluid>
 						<v-row>
 						<v-col cols="12">
-								<v-table>
-								<tbody v-if="pengurus">
+							<v-table>
+								<tbody v-if="pengurus[0]">
 									<tr>
 										<td>Ketua Wilayah</td><td>:</td>
-										<td style="width: 70%">{{ pengurus.nama_ketua }}</td>
+										<td style="width: 70%">{{ pengurus[0].nama_ketua }}</td>
 									</tr>
 									<tr>
 										<td>Wakil Ketua Wilayah</td><td>:</td>
-										<td>{{ pengurus.nama_wakil }}</td>
+										<td>{{ pengurus[0].nama_wakil }}</td>
 									</tr>
 									<tr>
 										<td>Sekretaris Wilayah</td><td>:</td>
-										<td>{{ pengurus.nama_sekretaris }}</td>
+										<td>{{ pengurus[0].nama_sekretaris }}</td>
 									</tr>
-									<tr>
+									<tr class="align-top">
 										<td>Pengurus Lainnya</td><td>:</td>
-										<td v-html="pengurus.pengurus_lainnya"></td>
+										<td v-html="pengurus[0].pengurus_lainnya"></td>
 									</tr>
 								</tbody>
 							</v-table>
@@ -91,13 +91,16 @@
   	import { ref, computed, onMounted  } from "vue";
 	import { storeToRefs } from 'pinia'
 	import { useMonografWilayahStore } from '@/stores/monografWilayah'
+	import { usePengurusStore } from '@/stores/pengurusWilayah'
 	const tab = ref(null);
 	import { useRouter } from 'vue-router'
 
     const router = useRouter()
 
-  	const { infoWilayah, labelWilayah, 
-	  	childWilayah, pengurus } = storeToRefs(useMonografWilayahStore())
+  	const { infoWilayah, 
+	  	labelWilayah, 
+	  	childWilayah} = storeToRefs(useMonografWilayahStore())
+  	const { pengurus } = storeToRefs(usePengurusStore())
 
 	const data_wilayah = ref([
 		{

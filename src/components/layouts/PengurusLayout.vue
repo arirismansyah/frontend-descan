@@ -8,59 +8,11 @@
 			<!-- MAIN CONTENT -->
 			<v-container fluid ma-0 pa-0 fill-height>
 				<v-row>
-					<!-- RIGHT CONTENT -->
-					<RightNav jenis="summary" :kode="props.kode" />
-					<!-- RIGHT CONTENT -->
+					<RightNav jenis="pengurus" :kode="props.kode" />
 
 					<!-- MAIN CONTENT -->
 					<v-col cols="9"> 
-						<!-- row 1 -->
-						<v-row>
-							<v-col cols="12">
-								<DescSummary></DescSummary>
-							</v-col>
-						</v-row>
-						<!-- row 1 -->
-
-						<!-- row 2 -->
-						<v-row>
-							<v-col cols="12">
-								<!-- INFORMASI UMUM -->
-								<AdministrasiSummary></AdministrasiSummary>
-								<!-- INFORMASI UMUM -->
-							</v-col>
-						</v-row>
-						<!-- row 2 -->
-
-						<!-- row 3 -->
-						<v-row class="d-flex align-stretch">
-							<v-col cols="8" height="100%">
-								<v-row>
-									<v-col cols="12">
-										<MapSummary></MapSummary>
-									</v-col>
-								</v-row>
-								<v-row>
-								<v-col cols="12">
-									<EduSummary></EduSummary>
-								</v-col>
-								</v-row>
-							</v-col>
-							<v-col cols="4" fill-height class="align-self-auto">
-								<!-- <v-col cols="12"> -->
-								<DemographSummary class="align-self-auto" style="height: 100%"></DemographSummary>
-								<!-- </v-col> -->
-							</v-col>
-						</v-row>
-						<!-- row 3 -->
-
-						<!-- row 4 -->
-						<v-row>
-							<v-col cols="12">
-								<EmploySummary></EmploySummary>
-							</v-col>
-						</v-row>
-						<!-- row 4 -->
+						<ListPengurus />
 					</v-col>
 					<!-- MAIN CONTENT -->
 				</v-row>
@@ -84,18 +36,9 @@
 	import Header from "@/components/navigation/Header.vue";
 	import Footer from "@/components/navigation/Footer.vue";
 	import SubNav from "@/components/navigation/SubNav.vue";
-
-	import DescSummary from "../summary/DescSummary.vue";
-	import AdministrasiSummary from "../summary/AdministrasiSummary.vue";
-	import EduSummary from "../summary/EduSummary.vue";
-	import MapSummary from "../summary/MapSummary.vue";
-	import DemographSummary from "../summary/DemographSummary.vue";
-	import EmploySummary from "../summary/EmploySummary.vue";
-
 	import RightNav from "../navigation/RightNav.vue";
-	import MenuKemiskinan from "../summary/MenuKemiskinan.vue";
-	import MenuStunting from "../summary/MenuStunting.vue";
-	import MenuUmkm from "../summary/MenuUmkm.vue";
+
+	import ListPengurus from "@/components/pengurus/ListPengurus.vue";
 	
 	const monografStore = useMonografWilayahStore()
 	const pengurusStore = usePengurusStore()

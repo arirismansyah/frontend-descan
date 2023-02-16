@@ -3,7 +3,6 @@
     <v-card-title>
       <strong>Pendidikan</strong>
     </v-card-title>
-    <v-card-subtitle v-if="infoWilayah">{{ labelWilayah }} {{ infoWilayah.nama }}</v-card-subtitle>
     <v-card-text>
       <!-- TREE MAP -->
       <canvas id="myChart"></canvas>

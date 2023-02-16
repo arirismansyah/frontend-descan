@@ -43,8 +43,6 @@
 	import { storeToRefs } from 'pinia'
 	import { useMonografWilayahStore } from '@/stores/monografWilayah'
 
-	// const monografStore = useMonografWilayahStore()
-
   	const { infoWilayah, labelWilayah } = storeToRefs(useMonografWilayahStore())
 
     function getKabLogoAssets(kode){

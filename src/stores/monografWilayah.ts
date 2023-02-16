@@ -29,8 +29,7 @@ export const useMonografWilayahStore = defineStore('monografWilayah', {
 	state: () => ({ 
 		infoWilayah: null as Wilayah | null,
 		indukWilayah: [] as Wilayah[], 
-		childWilayah: [] as Wilayah[], 
-		pengurus: null as Pengurus | null, 
+		childWilayah: [] as Wilayah[],
 	}),
 	getters: {
 		labelWilayah: (state) => {
@@ -79,9 +78,6 @@ export const useMonografWilayahStore = defineStore('monografWilayah', {
 			this.infoWilayah = info;
 			this.indukWilayah = induk;
 			this.childWilayah = child
-		}, 
-		setPengurus(pengurus: Pengurus){
-			this.pengurus = pengurus
 		}
 	},
 })

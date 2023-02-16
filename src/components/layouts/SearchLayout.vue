@@ -29,8 +29,8 @@
   	import { ref, reactive, onMounted, inject } from "vue";
   	import axios from 'axios'
 
-	import Header from "@/components/general/Header.vue";
-	import Footer from "@/components/general/Footer.vue";
+	import Header from "@/components/navigation/Header.vue";
+	import Footer from "@/components/navigation/Footer.vue";
 	import Result from "@/components/search/Result.vue";
 
 	const urlApi = inject('urlApi')

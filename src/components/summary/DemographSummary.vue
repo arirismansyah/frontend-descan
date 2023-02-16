@@ -3,7 +3,6 @@
     <v-card-title>
       <strong>Demografi</strong>
     </v-card-title>
-    <v-card-subtitle v-if="infoWilayah">{{ labelWilayah }} {{ infoWilayah.nama }}</v-card-subtitle>
     <v-card-text>
       <Doughnut :data="data" :config="config" />
       <canvas id="barChart"></canvas>
