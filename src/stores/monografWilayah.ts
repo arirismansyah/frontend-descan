@@ -1,12 +1,5 @@
 import { defineStore } from "pinia";
-
-interface Wilayah {
-	kode_prov: string
-	kode_kab: string
-	kode_kec: string
-	kode_desa: string
-	nama: string
-}
+import type { Wilayah } from "@/models/Wilayah"
 
 export const useMonografWilayahStore = defineStore('monografWilayah', {
 	state: () => ({ 

@@ -12,21 +12,14 @@
 
 					<!-- MAIN CONTENT -->
 					<v-col cols="9"> 
-
-						<!-- row 2 -->
-						<v-row>
-							<v-col cols="12">
-								<!-- INFORMASI UMUM -->
-								<AdministrasiSummary></AdministrasiSummary>
-								<!-- INFORMASI UMUM -->
-							</v-col>
-						</v-row>
-						<!-- row 2 -->
-
 						<!-- row 3 -->
 						<v-row class="d-flex align-stretch">
 							<v-col cols="8" height="100%">
 								<v-row>
+									<v-col cols="12">
+										<DaftarKeluarga :kode="props.kode" />
+									</v-col>
+
 									<v-col cols="12">
 										<MapSummary></MapSummary>
 									</v-col>
@@ -39,7 +32,7 @@
 							</v-col>
 							<v-col cols="4" fill-height class="align-self-auto">
 								<!-- <v-col cols="12"> -->
-								<DemographSummary class="align-self-auto" style="height: 100%"></DemographSummary>
+								<ChartKemiskinan class="align-self-auto" style="height:100%"></ChartKemiskinan>
 								<!-- </v-col> -->
 							</v-col>
 						</v-row>
@@ -68,26 +61,27 @@
   	import { ref, onMounted, inject } from "vue";
   	import axios from 'axios'
 	import { storeToRefs } from 'pinia'
-
-	import { useMonografWilayahStore } from '@/stores/monografWilayah'
-
+	
 	import Header from "@/components/navigation/Header.vue";
 	import Footer from "@/components/navigation/Footer.vue";
 	import SubNav from "@/components/navigation/SubNav.vue";
+	import RightNav from "@/components/navigation/RightNav.vue";
 
+	import ChartKemiskinan from "@/components/kemiskinan/ChartKemiskinan.vue";
+	import DaftarKeluarga from "@/components/kemiskinan/DaftarKeluarga.vue";
 	import DescSummary from "../summary/DescSummary.vue";
 	import AdministrasiSummary from "../summary/AdministrasiSummary.vue";
 	import EduSummary from "../summary/EduSummary.vue";
 	import MapSummary from "../summary/MapSummary.vue";
-	import DemographSummary from "../summary/DemographSummary.vue";
-	import EmploySummary from "../summary/EmploySummary.vue";
+	import EmploySummary from "@/components/summary/EmploySummary.vue";
 
-	import RightNav from "../navigation/RightNav.vue";
-	import MenuKemiskinan from "../summary/MenuKemiskinan.vue";
-	import MenuStunting from "../summary/MenuStunting.vue";
-	import MenuUmkm from "../summary/MenuUmkm.vue";
-	
+	import { useMonografWilayahStore } from '@/stores/monografWilayah'
+	import { usePengurusStore } from '@/stores/pengurusWilayah'
+	import { useKeluargaStore } from '@/stores/kemiskinanWilayah'
+
 	const monografStore = useMonografWilayahStore()
+	const pengurusStore = usePengurusStore()
+	const keluargaStore = useKeluargaStore()
 
 	const props = defineProps({ kode: String })
 	const urlApi = inject('urlApi')
@@ -115,12 +109,20 @@
 			})
 
 		await axios
-			.get(`${urlApi}pengurus/${props.kode}/last`)
+			.get(`${urlApi}pengurus/${props.kode}/list`)
 			.then(({data})=>{
-				monografStore.setPengurus(data.datas);
+				pengurusStore.setPengurus(data.datas.data);
 			}).catch(({ response })=>{
 				console.error(response)
 			})
+
+		// await axios
+		// 	.get(`${urlApi}keluarga_miskin/${props.kode}/list?per_page=10`)
+		// 	.then(({data})=>{
+		// 		keluargaStore.setKeluarga(data.datas);
+		// 	}).catch(({ response })=>{
+		// 		console.error(response)
+		// 	})
 	}
 
 	onMounted(() => {

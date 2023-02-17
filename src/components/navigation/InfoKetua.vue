@@ -19,6 +19,7 @@
 			<v-row>
 				<v-col cols="12" class="d-flex justify-center align-center">
 					<h3 v-if="pengurus[0]">{{ pengurus[0].nama_ketua }}</h3>
+					<h5 v-else>Belum ada informasi ketua wilayah</h5>
 				</v-col>
 			</v-row>
 		</v-card-text>
