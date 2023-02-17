@@ -1,4 +1,3 @@
-import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 
 interface Wilayah {
@@ -7,22 +6,6 @@ interface Wilayah {
 	kode_kec: string
 	kode_desa: string
 	nama: string
-}
-
-interface Pengurus {
-	kode_prov: string
-	kode_kab: string
-	kode_kec: string
-	kode_desa: string
-	nama_ketua: string,
-	path_foto: string,
-	nama_wakil: string,
-	nama_sekretaris: string,
-	pengurus_lainnya: string,
-	periode_awal_aktif: string,
-	periode_akhir_aktif: string,
-	status_aktif: number,
-	encId: string
 }
 
 export const useMonografWilayahStore = defineStore('monografWilayah', {

@@ -39,6 +39,9 @@
 										<td v-html="pengurus[0].pengurus_lainnya"></td>
 									</tr>
 								</tbody>
+								<tbody v-else>
+									Data pengurus pada wilayah ini tidak ditemukan
+								</tbody>
 							</v-table>
 						</v-col>
 						</v-row>

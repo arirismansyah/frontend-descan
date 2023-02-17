@@ -7,7 +7,7 @@
 		<v-card-text>
 			<v-container fluid>
 				<v-row>
-					<v-col cols="12">
+					<v-col v-if="pengurus" cols="12">
 						<v-card v-for="(item, index) in pengurus">
 							<h4>Periode {{ formatDate(item.periode_awal_aktif) }} sd {{ formatDate(item.periode_akhir_aktif) }}</h4>
 							<v-table>
@@ -32,6 +32,7 @@
 							</v-table>
 						</v-card>
 					</v-col>
+					<v-col cols="12">Data pengurus pada wilayah ini tidak ditemukan</v-col>
 				</v-row>
 			</v-container>
 		</v-card-text>

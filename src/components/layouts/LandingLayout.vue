@@ -18,7 +18,6 @@
                   .get(`${this.urlApi}wilayah/16`)
                   .then(({data})=>{
                       this.kabKota = data.datas
-                      console.log(this.kabKota)
                   }).catch(({ response })=>{
                       console.error(response)
                   })

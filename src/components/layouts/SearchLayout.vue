@@ -56,6 +56,7 @@
 	}
 
 	async function loadSearchWilayah(){
+		console.log("Masuk sini")
 		await axios.post(`${urlApi}wilayah/search`, {
 					keyword: propsShadow.keyword,
 				}).
@@ -63,7 +64,6 @@
 					console.log(propsShadow.keyword)
 					if(data.status=='success'){
 						state.wilayahs = data.datas;
-						console.log(wilayahs)
 					}
 					else{
 						console.log("Data gagal disimpan, silahkan ulangi lagi")

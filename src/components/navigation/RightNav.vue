@@ -23,7 +23,7 @@
 								md="6"
 							>
 								<v-item v-slot="{ isSelected, toggle }">
-									<v-card elevation="4">
+									<v-card elevation="2">
 										<div class="text-center pt-4">
 											<v-btn @click="goToPage(item.tag)" v-if="props.jenis==item.tag" 
 												:icon="`mdi-${item.icon}`" 
@@ -64,7 +64,7 @@
 			{ icon: 'view-dashboard', label: 'Monograph', tag: 'summary'},
 			{ icon: 'account', label: 'History Pengurus', tag: 'pengurus' },
 			{ icon: 'cash-remove', label: 'Kemiskinan', tag: 'kemiskinan'},
-			{ icon: 'account-arrow-down', label: 'Stunting', tag: 'stunting' },
+			{ icon: 'account-arrow-down', label: 'Penduduk & Stunting', tag: 'stunting' },
 			{ icon: 'bank', label: 'UMKM', tag: 'umkm'},
 			{ icon: 'map', label: 'Peta Tematik',tag: 'tematik'}
 		];
