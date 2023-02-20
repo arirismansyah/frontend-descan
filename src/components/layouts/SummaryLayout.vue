@@ -14,13 +14,11 @@
 
 					<!-- MAIN CONTENT -->
 					<v-col cols="9"> 
-						<!-- row 1 -->
 						<v-row>
 							<v-col cols="12">
 								<DescSummary></DescSummary>
 							</v-col>
 						</v-row>
-						<!-- row 1 -->
 
 						<!-- row 2 -->
 						<v-row>
