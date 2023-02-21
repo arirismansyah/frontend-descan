@@ -58,7 +58,7 @@
 
   	const { infoWilayah, labelWilayah } = storeToRefs(useMonografWilayahStore())
 
-	const props = defineProps({ jenis: String, kode: String })
+	const props = defineProps({ jenis: {type: String}, kode: {type: String} })
 
 	const items = [
 			{ icon: 'view-dashboard', label: 'Monograph', tag: 'summary'},
@@ -70,7 +70,7 @@
 		];
 
 
-	function goToPage(page_name){
+	function goToPage(page_name: string){
         router.push({name: page_name})
 	}
 </script>

@@ -40,7 +40,7 @@ import { useKeluargaStore } from '@/stores/kemiskinanWilayah'
 const keluargaStore = useKeluargaStore()
 const { dataKeluarga, dataSemuaKeluarga } = storeToRefs(useKeluargaStore())
 const urlApi = inject('urlApi')
-const props = defineProps({ kode: String, })
+const props = defineProps({ kode: {type: String} })
 var keluarga_miskin;
 var keluar_sangatmiskin;
 var keluar_tidakmiskin;
@@ -50,12 +50,10 @@ function loadKeluarga(page = 1) {
         .get(`${urlApi}keluarga_miskin/${props.kode}/list?per_page=10&page=${page}`)
         .then(({ data }) => {
             keluargaStore.setSemuaKeluarga(data.datas);
-            console.log(dataSemuaKeluarga.value.data)
         }).catch(({ response }) => {
             console.error(response)
         })
 }
-
 
 onMounted(() => {
     loadKeluarga()

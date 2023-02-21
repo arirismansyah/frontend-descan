@@ -4,13 +4,13 @@
             <strong>Penerima Program bantuan</strong>
         </v-card-title>
         <v-card-text>
-            <Doughnut :data="data" :config="config" />
+            <Doughnut :data="data" :config="config_bar" />
             <canvas id="barChart"></canvas>
         </v-card-text>
     </v-card>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import axios from 'axios'
 import {
     Chart as ChartJS,
@@ -30,7 +30,7 @@ import { useKeluargaBantuanStore } from "@/stores/kemiskinanBantuan";
 const keluargaStore = useKeluargaBantuanStore()
 const { dataKeluargaBantuan } = storeToRefs(useKeluargaBantuanStore())
 const urlApi = inject('urlApi')
-const props = defineProps({ kode: String, })
+const props = defineProps({ kode: {type: String} })
 
 
 function loadKeluarga(page = 1) {
@@ -38,7 +38,6 @@ function loadKeluarga(page = 1) {
         .get(`${urlApi}keluarga_miskin/${props.kode}/list?per_page=10&page=${page}`)
         .then(({ data }) => {
             keluargaStore.setKeluargaBantuan(data.datas);
-            console.log(dataKeluargaBantuan.value.data)
         }).catch(({ response }) => {
             console.error(response)
         })

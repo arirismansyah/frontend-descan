@@ -16,7 +16,7 @@
     </v-row>
 </template>
   
-<script setup lang="ts">
+<script setup>
 import { ref, computed, onMounted, inject } from "vue";
 import leaflet from "leaflet";
 import axios from 'axios'
@@ -29,15 +29,14 @@ let mymap;
 
 const { infoWilayah } = storeToRefs(useMonografWilayahStore())
 // const { dataKeluarga } = storeToRefs(useKeluargaStore())
-console.log(dataKeluarga.value?.data);
-const geoJson = computed(() => {
-    return infoWilayah.nama
-})
+// console.log(dataKeluarga.value?.data);
+// const geoJson = computed(() => {
+//     // return infoWilayah.nama
+// })
 
 var marker = [-2.991348, 104.759168];
 
 onMounted(() => {
-    console.log(dataKeluarga.value?.current_page)
     mymap = leaflet.map("mapid").setView([-2.9655006, 104.7335063], 13);
     leaflet
         .tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -48,8 +47,6 @@ onMounted(() => {
 
     var marker = [-2.991348, 104.759168];
     leaflet.marker(marker, {}).bindPopup("<b>Hello world!</b><br>I am a popup.").addTo(mymap);
-
-    console.log(dataKeluarga)
 })
 </script>
   

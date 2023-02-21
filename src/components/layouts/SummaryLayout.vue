@@ -98,8 +98,8 @@
 	const monografStore = useMonografWilayahStore()
 	const pengurusStore = usePengurusStore()
 
-	const props = defineProps({ kode: String })
-	const urlApi = inject('urlApi')
+	const props = defineProps({ kode: {type: String} });
+	const urlApi = inject('urlApi');
 	const theme = ref("light");
 	const fullscreen = ref("false");
 

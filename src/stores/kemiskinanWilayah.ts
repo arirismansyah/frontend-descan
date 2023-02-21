@@ -10,7 +10,6 @@ export const useKeluargaStore = defineStore('keluarga', {
 	actions: {
 		setKeluarga(keluargas: PaginationData<Keluarga>) {
 			this.dataKeluarga = keluargas
-
 		},
 		setSemuaKeluarga(semuakeluarga: Keluarga[]) {
 			this.dataSemuaKeluarga = semuakeluarga

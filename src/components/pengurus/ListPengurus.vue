@@ -65,14 +65,14 @@ import { useMonografWilayahStore } from '@/stores/monografWilayah';
 const { pengurus } = storeToRefs(usePengurusStore())
 const { infoWilayah, labelWilayah } = storeToRefs(useMonografWilayahStore())
 
-function formatDate(date) {
+function formatDate(date: any) {
 	const month_label = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
-	var d = new Date(date),
-		month = '' + (d.getMonth() + 1),
-		day = '' + d.getDate(),
-		year = d.getFullYear();
+	let d: any = new Date(date),
+		month: string = '' + (d.getMonth() + 1),
+		day: string = '' + d.getDate(),
+		year: number = d.getFullYear();
 
 
-	return [day, month_label[month - 1], year].join(' ');
+	return [day, month_label[Number(month) - 1], year].join(' ');
 }
 </script>

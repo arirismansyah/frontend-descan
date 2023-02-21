@@ -3,5 +3,6 @@ export interface Wilayah {
 	kode_kab: string
 	kode_kec: string
 	kode_desa: string
+	kode_wilayah: string
 	nama: string
 }

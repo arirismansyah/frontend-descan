@@ -10,7 +10,7 @@
     </v-card-text>
   </v-card>
 </template>
-<script setup lang="ts">
+<script setup>
 import { ref, onMounted } from "vue";
 
 import { Chart, Tooltip } from "chart.js";
@@ -68,7 +68,7 @@ const config = {
         labels: {
           align: "left",
           display: true,
-          formatter(ctx) {
+          formatter(ctx){
             if (ctx.type !== "data") {
               return;
             }

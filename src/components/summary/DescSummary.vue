@@ -45,7 +45,7 @@
 
   	const { infoWilayah, labelWilayah } = storeToRefs(useMonografWilayahStore())
 
-    function getKabLogoAssets(kode){
+    function getKabLogoAssets(kode: string){
         return new URL(`../../assets/images/kabs-logo/logo16${kode}.png`, import.meta.url).href
     }
 </script>

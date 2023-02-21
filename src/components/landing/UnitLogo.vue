@@ -1,7 +1,7 @@
 <script setup>
     defineProps({
-        kodeWilayah: String,
-        name: String
+        kodeWilayah: {type: String},
+        name: {type: String}
     })
 
     function getLogoAssets(kode){

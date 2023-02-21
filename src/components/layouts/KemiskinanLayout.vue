@@ -49,7 +49,6 @@ import DaftarKeluarga from "@/components/kemiskinan/DaftarKeluarga.vue";
 import MapKemiskinan from "../kemiskinan/MapKemiskinan.vue";
 import EmploySummary from "@/components/summary/EmploySummary.vue";
 
-
 import { useMonografWilayahStore } from '@/stores/monografWilayah'
 import { usePengurusStore } from '@/stores/pengurusWilayah'
 import { useKeluargaStore } from '@/stores/kemiskinanWilayah'
@@ -58,7 +57,7 @@ const monografStore = useMonografWilayahStore()
 const pengurusStore = usePengurusStore()
 const keluargaStore = useKeluargaStore()
 
-const props = defineProps({ kode: String })
+const props = defineProps({ kode: {type: String} })
 const urlApi = inject('urlApi')
 const theme = ref("light");
 const fullscreen = ref("false");

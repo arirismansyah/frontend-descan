@@ -10,7 +10,7 @@
   </v-card>
 </template>
 
-<script setup lang="ts">
+<script setup>
 	import {
 		Chart as ChartJS,
 		Title,

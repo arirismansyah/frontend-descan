@@ -1,5 +1,5 @@
 <template>
-    <SummaryLayout :kode="$route.params.kode"></SummaryLayout>
+    <SummaryLayout :kode="$route.params.kode as string"></SummaryLayout>
 </template>
 
 <script setup lang="ts">

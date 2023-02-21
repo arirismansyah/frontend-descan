@@ -1,5 +1,5 @@
 <template>
-    <SearchLayout :keyword="this.$route.query.keyword"></SearchLayout>
+    <SearchLayout :keyword="$route.query.keyword as string"></SearchLayout>
 </template>
 
 <script setup lang="ts">

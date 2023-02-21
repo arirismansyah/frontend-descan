@@ -4,13 +4,13 @@
             <strong>Tingkat Kesejahteraan</strong>
         </v-card-title>
         <v-card-text>
-            <Doughnut :data="data" :config="config" />
+            <Doughnut :data="data" :config="config_bar" />
             <canvas id="barChart"></canvas>
         </v-card-text>
     </v-card>
 </template>
 
-<script setup lang="ts">
+<script setup>
 	import {
 		Chart as ChartJS,
 		Title,

@@ -68,7 +68,7 @@
     </v-row>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { onMounted, inject } from "vue";
 import leaflet from "leaflet";
 import axios from 'axios'
@@ -79,9 +79,9 @@ import { Bootstrap4Pagination } from 'laravel-vue-pagination';
 const keluargaStore = useKeluargaStore()
 const { dataKeluarga } = storeToRefs(useKeluargaStore())
 const urlApi = inject('urlApi')
-const props = defineProps({ kode: String, })
-var mymap;
-var layerGroup;
+const props = defineProps({ kode: {type: String} })
+let mymap;
+let layerGroup;
 
 function loadKeluarga(page = 1) {
     axios
@@ -103,7 +103,7 @@ function loadMap() {
 
     // hapus layer group (marker) dan inisiasi marker baru
     mymap.removeLayer(layerGroup);
-    layerGroup = new leaflet.layerGroup()
+    layerGroup = leaflet.layerGroup()
     var featureGroup;
     var marker = [];
 
@@ -120,7 +120,7 @@ function loadMap() {
             }
             // memasukkan marker ke variable  marker dulu untuk di feturegrup
             // marker diberikan pop up
-            marker.push(leaflet.marker([element.latitude, element.longitude], {})
+            marker.push(leaflet.marker([Number(element.latitude), Number(element.longitude)], {})
                 .bindPopup("<b>Keluarga " + status + "</b><br>" + element.nama_kepala))
             // .on('click', function (e) { mymap.setView(e.latlng, 16) }))
         }
@@ -149,13 +149,12 @@ function loadMap() {
 }
 
 onMounted(() => {
-    mymap = new leaflet.map("mapid").setView([-3.129461, 104.334412], 8);
-    layerGroup = new leaflet.layerGroup().addTo(mymap);
+    mymap = leaflet.map("mapid").setView([-3.129461, 104.334412], 8);
+    layerGroup = leaflet.layerGroup().addTo(mymap);
     loadKeluarga()
 });
 
 function zoomOnMap(latitude, longitude) {
-    // console.log(latitude, longitude);
-    mymap = mymap.setView([latitude, longitude], 16);
+    mymap = mymap.setView([Number(latitude), Number(longitude)], 16);
 }
 </script>

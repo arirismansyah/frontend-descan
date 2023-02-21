@@ -10,7 +10,7 @@
 	import { useMonografWilayahStore } from '@/stores/monografWilayah'
 
 	const monografStore = useMonografWilayahStore()
-	const props = defineProps({ kode: String, })
+	const props = defineProps({ kode: {type: String} })
 
 	const items = computed(() => {
 		let result = [];
@@ -21,7 +21,7 @@
 					title = "Provinsi";
 					break;
 				case 1:
-					let kodeKabKota = props.kode.substring(2, 3);
+					let kodeKabKota = props?.kode?.substring(2, 3);
 					if(kodeKabKota=="7") title = "Kota";
 					else title = "Kabupaten";
 					break;

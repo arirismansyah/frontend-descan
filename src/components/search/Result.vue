@@ -17,8 +17,8 @@
 <script setup>
   	import { onMounted, computed } from "vue";
 	const props = defineProps({ 
-			kode: String, 
-			nama: String,
+			kode: {type: String}, 
+			nama: {type: String},
 		})
 
 	const labelLevel = computed(() => {

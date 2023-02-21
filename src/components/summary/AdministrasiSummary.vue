@@ -56,7 +56,7 @@
 								<v-col cols="12">
 									<v-table>
 										<tbody>
-											<tr v-for="item in childWilayah" :key="item.name">
+											<tr v-for="item in childWilayah" :key="item.nama">
 												<td><a :href="'/summary/'+item.kode_wilayah">{{ item.nama }}</a></td>
 											</tr>
 										</tbody>
@@ -90,14 +90,13 @@
 	</v-card>
 </template>
 
-<script setup lang="ts">
+<script setup>
+	import { useRouter } from 'vue-router'
   	import { ref, computed, onMounted  } from "vue";
 	import { storeToRefs } from 'pinia'
 	import { useMonografWilayahStore } from '@/stores/monografWilayah'
 	import { usePengurusStore } from '@/stores/pengurusWilayah'
 	const tab = ref(null);
-	import { useRouter } from 'vue-router'
-
     const router = useRouter()
 
   	const { infoWilayah, 

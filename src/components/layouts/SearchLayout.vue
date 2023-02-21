@@ -14,7 +14,7 @@
 
 		  				<Result v-for="(data, idx) in state.wilayahs" :key="idx" 
 						   	:kode="(data.kode_prov+data.kode_kab+data.kode_kec+data.kode_desa)"
-						  	:nama="data.nama"/>
+						  	:nama="data.nama as string"/>
 					</v-col>
 					<v-col cols="2"></v-col>
 				</v-row>
@@ -28,6 +28,7 @@
 <script setup lang="ts">
   	import { ref, reactive, onMounted, inject } from "vue";
   	import axios from 'axios'
+	import type { Wilayah } from "@/models/Wilayah";
 
 	import Header from "@/components/navigation/Header.vue";
 	import Footer from "@/components/navigation/Footer.vue";
@@ -38,11 +39,11 @@
 	const fullscreen = ref("false");
 
 	let props = defineProps({ 
-		keyword: String,
+		keyword: {type: String},
 	})
 
 	const state = reactive({
-		wilayahs: []
+		wilayahs: [] as Wilayah[]
 	});
 
 	let propsShadow = Object.assign({}, props)

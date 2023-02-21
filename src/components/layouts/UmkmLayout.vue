@@ -79,6 +79,7 @@
 	import { storeToRefs } from 'pinia'
 
 	import { useMonografWilayahStore } from '@/stores/monografWilayah'
+	import { usePengurusStore } from '@/stores/pengurusWilayah'
 
 	import Header from "@/components/navigation/Header.vue";
 	import Footer from "@/components/navigation/Footer.vue";
@@ -97,8 +98,9 @@
 	import MenuUmkm from "../summary/MenuUmkm.vue";
 	
 	const monografStore = useMonografWilayahStore()
+	const pengurusStore = usePengurusStore()
 
-	const props = defineProps({ kode: String })
+	const props = defineProps({ kode: {type: String} })
 	const urlApi = inject('urlApi')
 	const theme = ref("light");
 	const fullscreen = ref("false");
@@ -124,9 +126,9 @@
 			})
 
 		await axios
-			.get(`${urlApi}pengurus/${props.kode}/last`)
+			.get(`${urlApi}pengurus/${props.kode}/list`)
 			.then(({data})=>{
-				monografStore.setPengurus(data.datas);
+				pengurusStore.setPengurus(data.datas.data);
 			}).catch(({ response })=>{
 				console.error(response)
 			})
