@@ -3,6 +3,16 @@
 		<v-card :to="'/summary/' + kodeWilayah" class="mx-auto p-2 border border-dark" outlined>
 			<v-list-item three-line>
 				<v-list-item-content>
+					<v-list-subheader>
+						{{ props.nama_prov }}
+						<span v-if="props.nama_kab!=''">
+						- {{ props.nama_kab }}
+						</span>
+
+						<span v-if="props.nama_kec!=''">
+						- {{ props.nama_kec }}
+						</span>
+					</v-list-subheader>
 					<v-list-item-title class="text-h6 mb-2 text-info">
 						{{ props.nama }}
 					</v-list-item-title>
@@ -19,6 +29,9 @@
 	const props = defineProps({ 
 			kode: {type: String}, 
 			nama: {type: String},
+			nama_prov: {type: String},
+			nama_kab: {type: String},
+			nama_kec: {type: String},
 		})
 
 	const labelLevel = computed(() => {

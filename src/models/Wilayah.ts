@@ -5,4 +5,7 @@ export interface Wilayah {
 	kode_desa: string
 	kode_wilayah: string
 	nama: string
+	nama_prov?: string,
+	nama_kab?: string,
+	nama_kec?: string,
 }

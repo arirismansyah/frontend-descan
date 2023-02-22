@@ -14,7 +14,10 @@
 
 		  				<Result v-for="(data, idx) in state.wilayahs" :key="idx" 
 						   	:kode="(data.kode_prov+data.kode_kab+data.kode_kec+data.kode_desa)"
-						  	:nama="data.nama as string"/>
+						  	:nama="(data.nama as string)"
+							:nama_prov="(data.nama_prov as string)"
+							:nama_kab="(data.nama_kab as string)"
+							:nama_kec="(data.nama_kec as string)" />
 					</v-col>
 					<v-col cols="2"></v-col>
 				</v-row>
@@ -57,12 +60,10 @@
 	}
 
 	async function loadSearchWilayah(){
-		console.log("Masuk sini")
 		await axios.post(`${urlApi}wilayah/search`, {
 					keyword: propsShadow.keyword,
 				}).
 				then(({data}) => {
-					console.log(propsShadow.keyword)
 					if(data.status=='success'){
 						state.wilayahs = data.datas;
 					}

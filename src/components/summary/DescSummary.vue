@@ -14,8 +14,8 @@
 
 						<v-avatar v-if="infoWilayah.kode_kab!='00'" color="blue mx-16" size="153">
 							<v-avatar color="white" size="150">
-								<img class="img-responsive"
-                    				:src="getKabLogoAssets(infoWilayah.kode_kab)"
+								<img class="img-responsive" width="90"
+									:src="getKabLogoAssets(infoWilayah.kode_kab)"
 									alt="" />
 							</v-avatar>
 						</v-avatar>
