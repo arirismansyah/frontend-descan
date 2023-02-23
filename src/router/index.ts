@@ -7,6 +7,7 @@ import KemiskinanView from "@/views/KemiskinanView.vue";
 import StuntingView from "@/views/StuntingView.vue";
 import UmkmView from "@/views/UmkmView.vue";
 import TematikView from "@/views/TematikView.vue";
+import SandboxView from "@/views/SandboxView.vue";
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -51,6 +52,11 @@ const router = createRouter({
 			path: "/search",
 			name: "search",
 			component: SearchView,
+		},
+		{
+			path: "/sandbox",
+			name: "sandbox",
+			component: SandboxView,
 		},
 	],
 });
