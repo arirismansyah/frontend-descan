@@ -1,5 +1,5 @@
 <template>
-	
+	tes
   <div class="content-wrapper">
     <header class="wrapper bg-soft-primary">
       <nav class="navbar navbar-expand-lg center-logo bg-image position-absolute navbar-dark"
