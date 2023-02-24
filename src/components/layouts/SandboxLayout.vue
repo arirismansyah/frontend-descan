@@ -3,13 +3,13 @@
   <div class="content-wrapper">
     <header class="wrapper bg-soft-primary">
       <nav class="navbar navbar-expand-lg center-logo bg-image position-absolute navbar-dark"
-        data-image-src="./assets/img/photos/bg2.jpg">
+        data-image-src="@/assets/sandbox/img/photos/bg2.jpg">
         <div class="container justify-content-between align-items-center mx-1 " style="max-width:100%">
 
           <div class="d-flex flex-row w-100 justify-content-between align-items-center d-lg-none">
             <div class="navbar-brand py-2"><a href="./index.html">
-                <img class="logo-dark" src="./assets/logo/logofont.png" srcset="./assets/logo/logofont.png 8x" alt="" />
-                <img class="logo-light" src="./assets/logo/logofont.png" srcset="./assets/logo/logofont.png 8x"
+                <img class="logo-dark" src="@/assets/sandbox/logo/logofont.png" srcset="@/assets/sandbox/logo/logofont.png 8x" alt="" />
+                <img class="logo-light" src="@/assets/sandbox/logo/logofont.png" srcset="@/assets/sandbox/logo/logofont.png 8x"
                   alt="" />
               </a>
             </div>
@@ -38,7 +38,7 @@
             <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
               <div class="navbar-brand  px-2">
                 <a href="./index.html">
-                  <img src="./assets/logo/logofont.png" srcset="./assets/logo/logofont.png 8x" alt="" />
+                  <img src="@/assets/sandbox/logo/logofont.png" srcset="@/assets/sandbox/logo/logofont.png 8x" alt="" />
                 </a>
               </div>
 
@@ -50,18 +50,18 @@
                       <li class="mega-menu-content">
                         <ul class="row row-cols-1 row-cols-lg-5 gx-0 gx-lg-4 gy-lg-2 list-unstyled">
                           <li class="col"><a class="dropdown-item" href="#">
-                              <figure class="rounded lift d-none d-lg-block"><img src="./assets/img/demos/mi1.jpg"
-                                  srcset="./assets/img/demos/mi1@2x.jpg 2x" alt=""></figure>
+                              <figure class="rounded lift d-none d-lg-block"><img src="@/assets/sandbox/img/demos/mi1.jpg"
+                                  srcset="@/assets/sandbox/img/demos/mi1@2x.jpg 2x" alt=""></figure>
                               <span class="d-lg-none">Monograph</span>
                             </a></li>
                           <li class="col"><a class="dropdown-item" href="#">
-                              <figure class="rounded lift d-none d-lg-block"><img src="./assets/img/demos/mi2.jpg"
-                                  srcset="./assets/img/demos/mi2@2x.jpg 2x" alt=""></figure>
+                              <figure class="rounded lift d-none d-lg-block"><img src="@/assets/sandbox/mg/demos/mi2.jpg"
+                                  srcset="@/assets/sandbox/img/demos/mi2@2x.jpg 2x" alt=""></figure>
                               <span class="d-lg-none">Kemiskinan</span>
                             </a></li>
                           <li class="col"><a class="dropdown-item" href="#">
-                              <figure class="rounded lift d-none d-lg-block"><img src="./assets/img/demos/mi3.jpg"
-                                  srcset="./assets/img/demos/mi3@2x.jpg 2x" alt=""></figure>
+                              <figure class="rounded lift d-none d-lg-block"><img src="@/assets/sandbox/img/demos/mi3.jpg"
+                                  srcset="@/assets/sandbox/img/demos/mi3@2x.jpg 2x" alt=""></figure>
                               <span class="d-lg-none">Pengurus</span>
                             </a></li>
                         </ul>
@@ -119,24 +119,24 @@
     </header>
 
     <section class="wrapper image-wrapper bg-image bg-overlay bg-overlay-900 bg-overlay-900 "
-      data-image-src="./assets/img/desa/desa_1.jpg">
+      data-image-src="@/assets/sandbox/img/desa/desa_1.jpg">
       <div class="container pt-6 pt-md-15 pb-8">
         <div class="row gx-lg-8 gy-8 mt-5 mt-md-12 mt-lg-0 mb-8 align-items-center">
           <div class="col-lg-6 order-lg-2">
             <div class="row gx-md-5 gy-5" data-cues="fadeIn" data-group="images">
               <div class="col-md-6 text-center ">
-                <figure class="rounded mx-4"><img src="./assets/prov-logo/prov_logo.png"
-                    srcset="./assets/prov-logo/prov_logo.png 2x" alt=""
+                <figure class="rounded mx-4"><img src="@/assets/sandbox/prov-logo/prov_logo.png"
+                    srcset="@/assets/sandbox/prov-logo/prov_logo.png 2x" alt=""
                     style="max-height: 300px; max-width: 200px; height:100% ; width: 100%;"></figure>
               </div>
               <div class="col-md-6 text-center ">
-                <figure class="rounded mx-4"><img src="./assets/kabs-logo/logo1601.png"
-                    srcset="./assets/kabs-logo/logo1601.png 2x" alt=""
+                <figure class="rounded mx-4"><img src="@/assets/sandbox/kabs-logo/logo1601.png"
+                    srcset="@/assets/sandbox/kabs-logo/logo1601.png 2x" alt=""
                     style="max-height: 300px; max-width: 200px;  height:100% ; width: 100%;"></figure>
               </div>
               <!-- <div class="col-md-12 text-center">
-                  <figure class="rounded"><img src="./assets/img/foto_pengurus/ronaldo.jpeg"
-                      srcset="./assets/img/foto_pengurus/ronaldo.jpeg 2x" alt=""
+                  <figure class="rounded"><img src="@/assets/sandbox/img/foto_pengurus/ronaldo.jpeg"
+                      srcset="@/assets/sandbox/img/foto_pengurus/ronaldo.jpeg 2x" alt=""
                       style="max-height: 300px; max-width: 200px; height:100% ; width: 100%;"></figure>
                 </div> -->
             </div>
@@ -527,8 +527,8 @@
               <div class="swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <img class="rounded-circle w-20 h-20 mx-auto mb-4" src="./assets/img/foto_pengurus/ronaldo.jpeg"
-                      srcset="./assets/img/foto_pengurus/ronaldo.jpeg 2x" alt="" />
+                    <img class="rounded-circle w-20 h-20 mx-auto mb-4" src="@/assets/sandbox/img/foto_pengurus/ronaldo.jpeg"
+                      srcset="@/assets/sandbox/img/foto_pengurus/ronaldo.jpeg 2x" alt="" />
                     <h4 class="mb-1">Ronaldo</h4>
                     <div class="meta mb-2">Ketua Daerah</div>
                     <p class="mb-2">2019 s.d 2024</p>
@@ -544,8 +544,8 @@
                   </div>
                   <!--/.swiper-slide -->
                   <div class="swiper-slide">
-                    <img class="rounded-circle w-20 h-20  mx-auto mb-4" src="./assets/img/foto_pengurus/kimmin.jpg"
-                      srcset="./assets/img/avatars/t2@2x.jpg 2x" alt="" />
+                    <img class="rounded-circle w-20 h-20  mx-auto mb-4" src="@/assets/sandbox/img/foto_pengurus/kimmin.jpg"
+                      srcset="@/assets/sandbox/img/avatars/t2@2x.jpg 2x" alt="" />
                     <h4 class="mb-1">Ronaldo</h4>
                     <div class="meta mb-2">Wakil Ketua Daerah</div>
                     <p class="mb-2">2019 s.d 2024</p>
@@ -575,13 +575,13 @@
 
   </div>
 
-  <footer class="bg-dark  text-inverse" data-image-src="./assets/img/photos/bg2.jpg">
+  <footer class="bg-dark  text-inverse" data-image-src="@/assets/sandbox/img/photos/bg2.jpg">
     <div class="container mx-10 pb-7 pb-md-7 pt-3 mt-3" style="max-width:92%">
 
       <div class="row gy-6 gy-lg-0">
         <div class="col-md-4 col-lg-3">
           <div class="widget">
-            <img class="mb-4" src="./assets/logo/logo.png" srcset="./assets/logo/logo.png 8x" alt="" />
+            <img class="mb-4" src="@/assets/sandbox/logo/logo.png" srcset="@/assets/sandbox/logo/logo.png 8x" alt="" />
             <p class="mb-4">© 2023 Developer 1600<br class="d-none d-lg-block" />All rights reserved.</p>
             <nav class="nav social social-white">
               <a href="https://www.facebook.com/people/Bps-Provinsi-Sumatera-Selatan/100015484759318/"
