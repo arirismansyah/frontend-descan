@@ -125,8 +125,8 @@
           <div class="col-lg-6 order-lg-2">
             <div class="row gx-md-5 gy-5" data-cues="fadeIn" data-group="images">
               <div class="col-md-6 text-center ">
-                <figure class="rounded mx-4"><img src="@/assets/images/prov-logo/prov_logo.png"
-                    srcset="@/assets/images/prov-logo/prov_logo.png 2x" alt=""
+                <figure class="rounded mx-4"><img src="@/assets/images/prov-logo/logo1600.png"
+                    srcset="@/assets/images/prov-logo/logo1600.png 2x" alt=""
                     style="max-height: 300px; max-width: 200px; height:100% ; width: 100%;"></figure>
               </div>
               <div class="col-md-6 text-center ">
