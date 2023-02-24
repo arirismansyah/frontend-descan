@@ -130,8 +130,8 @@
                     style="max-height: 300px; max-width: 200px; height:100% ; width: 100%;"></figure>
               </div>
               <div class="col-md-6 text-center ">
-                <figure class="rounded mx-4"><img src="@/assets/sandbox/kabs-logo/logo1601.png"
-                    srcset="@/assets/sandbox/kabs-logo/logo1601.png 2x" alt=""
+                <figure class="rounded mx-4"><img src="@/assets/images/kabs-logo/logo1601.png"
+                    srcset="@/assets/images/kabs-logo/logo1601.png 2x" alt=""
                     style="max-height: 300px; max-width: 200px;  height:100% ; width: 100%;"></figure>
               </div>
               <!-- <div class="col-md-12 text-center">
