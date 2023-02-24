@@ -8,8 +8,8 @@
 
           <div class="d-flex flex-row w-100 justify-content-between align-items-center d-lg-none">
             <div class="navbar-brand py-2"><a href="./index.html">
-                <img class="logo-dark" src="@/assets/sandbox/logo/logofont.png" srcset="@/assets/sandbox/logo/logofont.png 8x" alt="" />
-                <img class="logo-light" src="@/assets/sandbox/logo/logofont.png" srcset="@/assets/sandbox/logo/logofont.png 8x"
+                <img class="logo-dark" src="@/assets/sandbox/logo/logo.png" srcset="@/assets/sandbox/logo/logo.png 8x" alt="" />
+                <img class="logo-light" src="@/assets/sandbox/logo/logo.png" srcset="@/assets/sandbox/logo/logo.png 8x"
                   alt="" />
               </a>
             </div>
@@ -38,7 +38,7 @@
             <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
               <div class="navbar-brand  px-2">
                 <a href="./index.html">
-                  <img src="@/assets/sandbox/logo/logofont.png" srcset="@/assets/sandbox/logo/logofont.png 8x" alt="" />
+                  <img src="@/assets/sandbox/logo/logo.png" srcset="@/assets/sandbox/logo/logo.png 8x" alt="" />
                 </a>
               </div>
 
