@@ -55,7 +55,7 @@
                               <span class="d-lg-none">Monograph</span>
                             </a></li>
                           <li class="col"><a class="dropdown-item" href="#">
-                              <figure class="rounded lift d-none d-lg-block"><img src="@/assets/sandbox/mg/demos/mi2.jpg"
+                              <figure class="rounded lift d-none d-lg-block"><img src="@/assets/sandbox/img/demos/mi2.jpg"
                                   srcset="@/assets/sandbox/img/demos/mi2@2x.jpg 2x" alt=""></figure>
                               <span class="d-lg-none">Kemiskinan</span>
                             </a></li>
