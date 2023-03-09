@@ -1,0 +1,10 @@
+<template>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Compare Stunting</h3>
+    </div>
+    <div class="card-body"></div>
+  </div>
+</template>
+
+<script setup lang="ts"></script>

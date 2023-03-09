@@ -1,12 +1,33 @@
 <template>
-  <v-card elevation="8">
-    <v-card-title>
-      <strong>Banner</strong>
-    </v-card-title>
-    <v-card-subtitle>Nama Wilayah</v-card-subtitle>
-    <v-card-text> </v-card-text>
-  </v-card>
+  <!-- PAGE-HEADER -->
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">Monograph</h1>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="javascript:void(0);">Elements</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Breadcrumbs</li>
+      </ol>
+    </div>
+    <div class="ms-auto pageheader-btn">
+      <a
+        href="javascript:void(0);"
+        class="btn btn-primary btn-icon text-white me-2"
+      >
+        <span>
+          <i class="fe fe-plus"></i>
+        </span>
+        Add Account
+      </a>
+      <a href="javascript:void(0);" class="btn btn-success btn-icon text-white">
+        <span>
+          <i class="fe fe-log-in"></i>
+        </span>
+        Export
+      </a>
+    </div>
+  </div>
+  <!-- PAGE-HEADER END -->
 </template>
-<script setup lang="ts">
-import { ref } from "vue";
-</script>
+<script setup lang="ts"></script>

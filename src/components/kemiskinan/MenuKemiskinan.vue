@@ -1,0 +1,47 @@
+<template>
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <!-- BANNER -->
+      <BannerKemiskinan></BannerKemiskinan>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6 col-md-6">
+      <!-- TAB TINGKAT KEMISKINAN -->
+      <TingkatKemiskinan></TingkatKemiskinan>
+    </div>
+    <div class="col-lg-6 col-md-6">
+      <!-- TAB BANTUAN -->
+      <BantuanKemiskinan></BantuanKemiskinan>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <!-- MAP & TABLE -->
+      <div class="row">
+        <!-- FILTER -->
+      </div>
+
+      <div class="row">
+        <!-- MAP -->
+        <MapKemiskinan></MapKemiskinan>
+      </div>
+
+      <div class="row">
+        <!-- TABLE -->
+        <DaftarKeluarga></DaftarKeluarga>
+      </div>
+    </div>
+  </div>
+</template>
+<script setup lang="ts">
+import BannerKemiskinan from "./BannerKemiskinan.vue";
+import BantuanKemiskinan from "./BantuanKemiskinan.vue";
+import TingkatKemiskinan from "./TingkatKemiskinan.vue";
+import MapKemiskinan from "./MapKemiskinan.vue";
+import DaftarKeluarga from "./DaftarKeluarga.vue";
+
+import { ref } from "vue";
+</script>

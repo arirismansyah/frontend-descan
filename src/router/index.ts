@@ -7,58 +7,52 @@ import KemiskinanView from "@/views/KemiskinanView.vue";
 import StuntingView from "@/views/StuntingView.vue";
 import UmkmView from "@/views/UmkmView.vue";
 import TematikView from "@/views/TematikView.vue";
-import SandboxView from "@/views/SandboxView.vue";
 
 const router = createRouter({
-	history: createWebHistory(import.meta.env.BASE_URL),
-	// history: VueRouter.createWebHashHistory(),
-	routes: [
-		{
-			path: "/",
-			name: "home",
-			component: LandingView,
-		},
-		{
-			path: "/summary/:kode",
-			name: "summary",
-			component: SummaryView,
-		},
-		{
-			path: "/pengurus/:kode",
-			name: "pengurus",
-			component: PengurusView,
-		},
-		{
-			path: "/kemiskinan/:kode",
-			name: "kemiskinan",
-			component: KemiskinanView,
-		},
-		{
-			path: "/stunting/:kode",
-			name: "stunting",
-			component: StuntingView,
-		},
-		{
-			path: "/umkm/:kode",
-			name: "umkm",
-			component: UmkmView,
-		},
-		{
-			path: "/tematik/:kode",
-			name: "tematik",
-			component: TematikView,
-		},
-		{
-			path: "/search",
-			name: "search",
-			component: SearchView,
-		},
-		{
-			path: "/sandbox",
-			name: "sandbox",
-			component: SandboxView,
-		},
-	],
+  history: createWebHistory(import.meta.env.BASE_URL),
+  // history: VueRouter.createWebHashHistory(),
+  routes: [
+    {
+      path: "/",
+      name: "home",
+      component: LandingView,
+    },
+    {
+      path: "/summary/:kode",
+      name: "summary",
+      component: SummaryView,
+    },
+    {
+      path: "/pengurus/:kode",
+      name: "pengurus",
+      component: PengurusView,
+    },
+    {
+      path: "/kemiskinan/:kode",
+      name: "kemiskinan",
+      component: KemiskinanView,
+    },
+    {
+      path: "/stunting/:kode",
+      name: "stunting",
+      component: StuntingView,
+    },
+    {
+      path: "/umkm/:kode",
+      name: "umkm",
+      component: UmkmView,
+    },
+    {
+      path: "/tematik/:kode",
+      name: "tematik",
+      component: TematikView,
+    },
+    {
+      path: "/search",
+      name: "search",
+      component: SearchView,
+    },
+  ],
 });
 
 export default router;
