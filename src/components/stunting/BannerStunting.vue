@@ -1,6 +1,6 @@
 <template>
   <!-- PAGE-HEADER -->
-  <div class="page-header">
+  <div class="page-header mt-0 mb-2">
     <div>
       <h1 class="page-title">Stunting</h1>
       <ol class="breadcrumb">
