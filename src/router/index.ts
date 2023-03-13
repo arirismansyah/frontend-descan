@@ -7,6 +7,7 @@ import KemiskinanView from "@/views/KemiskinanView.vue";
 import StuntingView from "@/views/StuntingView.vue";
 import UmkmView from "@/views/UmkmView.vue";
 import TematikView from "@/views/TematikView.vue";
+import MonographView from "@/views/MonographView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,11 @@ const router = createRouter({
       path: "/summary/:kode",
       name: "summary",
       component: SummaryView,
+    },
+    {
+      path: "/monograph/:kode",
+      name: "monograph",
+      component: MonographView,
     },
     {
       path: "/pengurus/:kode",

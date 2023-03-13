@@ -47,7 +47,7 @@
                 <input
                   type="search"
                   class="form-control header-search"
-                  placeholder="Cari Wilayah…"
+                  placeholder="Eksplor Wilayah ini…"
                   aria-label="Search"
                   tabindex="1"
                 />

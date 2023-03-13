@@ -1,4 +1,36 @@
 <template>
+  <!-- PAGE-HEADER -->
+  <div class="page-header mt-0 mb-2">
+    <div>
+      <h1 class="page-title">Kemiskinan</h1>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="javascript:void(0);">Elements</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Breadcrumbs</li>
+      </ol>
+    </div>
+    <div class="ms-auto pageheader-btn">
+      <a
+        href="javascript:void(0);"
+        class="btn btn-primary btn-icon text-white me-2"
+      >
+        <span>
+          <i class="fe fe-plus"></i>
+        </span>
+        Add Account
+      </a>
+      <a href="javascript:void(0);" class="btn btn-success btn-icon text-white">
+        <span>
+          <i class="fe fe-log-in"></i>
+        </span>
+        Export
+      </a>
+    </div>
+  </div>
+  <!-- PAGE-HEADER END -->
+
+  <!-- BANNER JUMLAH KELUARGA MISKIN -->
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xl-3">
       <div class="card overflow-hidden">
