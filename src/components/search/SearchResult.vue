@@ -31,13 +31,13 @@
           </div>
         </div>
         <div class="col-3">
-          <btn
-            class="btn btn-pill btn-outline-info"
+          <a
+            class="btn btn-pill btn-info text-white"
             :href="'/summary/' + kodeWilayah"
           >
             <i class="fe fe-eye"></i>
             Lihat
-          </btn>
+          </a>
         </div>
       </div>
     </div>
