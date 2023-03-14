@@ -3,7 +3,7 @@
     <div class="container">
       <div class="d-flex align-items-center">
         <a class="animated-arrow horizontal-navtoggle-1-1"><span></span></a>
-        <a class="header-brand" href="index.html">
+        <a class="header-brand" @click="goHome">
           <img
             src="@/assets/zanex/images/brand/logo-3.png"
             class="header-brand-img logo-3"
@@ -18,14 +18,14 @@
         <!-- LOGO -->
 
         <ul class="nav nav-pills nav-pills-circle" id="tabs_2" role="tablist">
-          <li class="nav-item">
+          <li class="nav-item" @click="goToPilihTematik">
             <a class="nav-link border py-2 px-4 m-1" aria-selected="false">
               <span class="nav-link-icon d-block"
                 ><i class="fe fe-map"></i> Peta Tematik
               </span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" @click="searchWilayah">
             <a class="nav-link border py-2 px-4 m-1" aria-selected="false">
               <span class="nav-link-icon d-block"
                 ><i class="fe fe-search"></i> Pilih Wilayah</span
@@ -64,9 +64,11 @@
             </a>
           </div>
           <!-- FULL-SCREEN -->
-          <div class="dropdown d-md-flex notifications">
+          <div @click="changeTheme" class="dropdown d-md-flex notifications">
             <a class="nav-link icon" data-bs-toggle="">
-              <i class="fe fe-moon"></i>
+              <i
+                v-bind:class="themeStore.light ? 'fe fe-moon' : 'fe fe-sun'"
+              ></i>
             </a>
           </div>
           <!-- NOTIFICATIONS -->
@@ -78,7 +80,8 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { useRouter, RouterLink } from "vue-router";
+import { useThemeStore } from "@/stores/theme";
 
 const router = useRouter();
 const keyword = ref("");
@@ -89,10 +92,16 @@ function searchWilayah() {
 }
 
 function goToPilihTematik() {
-  console.log("masuk wilayah");
+  router.push({ name: "tematik" });
 }
 
 function goHome() {
   router.push({ name: "home" });
+}
+
+const themeStore = useThemeStore();
+
+function changeTheme() {
+  themeStore.changeTheme();
 }
 </script>

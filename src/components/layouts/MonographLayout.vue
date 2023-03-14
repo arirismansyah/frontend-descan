@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <body v-bind:class="themeStore.light ? 'light-mode' : 'dark-mode'">
     <div class="page">
       <div class="page-main">
         <!-- app-Header -->
@@ -213,6 +213,9 @@ import MenuStunting from "../stunting/MenuStunting.vue";
 import MenuUmkm from "../umkm/MenuUmkm.vue";
 
 import { ref } from "vue";
+import { useThemeStore } from "@/stores/theme";
+const themeStore = useThemeStore();
+
 const menuSelected = ref("monograph");
 
 function menuMonograph() {

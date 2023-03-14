@@ -23,17 +23,25 @@
               src="@/assets/zanex/images/users/18.jpg"
             />
             <div class="media-body">
-              <a href="" class="text-default fw-semibold"
-                >Nama Wilayah: {{ props.nama }}</a
-              >
-              <p class="text-muted">Tingkat: {{ labelLevel }}</p>
+              <table>
+                <tr>
+                  <td class="text-default fw-semibold">Nama Wilayah</td>
+                  <td class="text-default fw-semibold px-2">:</td>
+                  <td class="text-default fw-semibold">{{ props.nama }}</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">Tingkatan Wilayah</td>
+                  <td class="text-muted px-2">:</td>
+                  <td class="text-muted">{{ labelLevel }}</td>
+                </tr>
+              </table>
             </div>
           </div>
         </div>
         <div class="col-3">
           <a
             class="btn btn-pill btn-info text-white"
-            :href="'/summary/' + kodeWilayah"
+            :href="'/monograph/' + kodeWilayah"
           >
             <i class="fe fe-eye"></i>
             Lihat

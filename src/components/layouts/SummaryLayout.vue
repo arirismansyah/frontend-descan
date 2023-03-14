@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <body v-bind:class="themeStore.light ? 'light-mode' : 'dark-mode'">
     <div class="page">
       <div class="page-main">
         <!-- app-Header -->
@@ -104,4 +104,7 @@ import EduSummary from "@/components/summary/EduSummary.vue";
 import EmploySummary from "@/components/summary/EmploySummary.vue";
 import MapSummary from "@/components/summary/MapSummary.vue";
 import HeaderSummary from "../summary/HeaderSummary.vue";
+import { useThemeStore } from "@/stores/theme";
+
+const themeStore = useThemeStore();
 </script>

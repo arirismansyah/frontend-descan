@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <body v-bind:class="themeStore.light ? 'light-mode' : 'dark-mode'">
     <div class="page">
       <div class="page-main">
         <!-- app-Header -->
@@ -122,6 +122,8 @@ import {
 } from "vue";
 import axios from "axios";
 import type { Wilayah } from "@/models/Wilayah";
+import { useThemeStore } from "@/stores/theme";
+const themeStore = useThemeStore();
 
 const loadingState = ref("false");
 const isLoaded = computed(() => loadingState.value === "success");
