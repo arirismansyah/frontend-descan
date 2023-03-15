@@ -1,21 +1,16 @@
 <template>
   <!-- PAGE-HEADER -->
   <div class="row mb-4 mt-4 bg-white">
-    <ol class="breadcrumb1">
+    <ol class="breadcrumb2">
       <li class="breadcrumb-item2 active">
-        <i class="fe fe-map-pin me-1 text-transparant" aria-hidden="true"></i
-        >Provinsi: {{}}
+        <i class="fe fe-map-pin me-1 text-transparant" aria-hidden="true"></i>
       </li>
-      <li class="breadcrumb-item2">
-        <a href="javascript:void(0);"
-          >Kab/Kota: {{ monographStore.indukWilayah[1].nama }}</a
-        >
-      </li>
-      <li class="breadcrumb-item2 active text-muted">
-        Kecamatan: {{ monographStore.infoWilayah?.nama_kec }}
-      </li>
-      <li class="breadcrumb-item2 active text-muted">
-        Desa: {{ monographStore.infoWilayah?.nama }}
+      <li
+        v-for="wilayah in infoWilayah"
+        :key="wilayah.level"
+        class="breadcrumb-item2 active"
+      >
+        {{ wilayah.level }}: {{ wilayah.nama }}
       </li>
     </ol>
   </div>
@@ -25,31 +20,39 @@
 import { useMonografWilayahStore } from "@/stores/monografWilayah";
 import { ref, computed, onMounted } from "vue";
 
-async function loadWilayah() {
-  await axios
-    .get(`${urlApi}wilayah/${props.kode}/show`)
-    .then(({ data }) => {
-      monografStore.setWilayah(
-        data.datas.result,
-        data.datas.info_induk,
-        data.datas.info_child
-      );
-    })
-    .catch(({ response }) => {
-      console.error(response);
-    });
-  await axios
-    .get(`${urlApi}pengurus/${props.kode}/list`)
-    .then(({ data }) => {
-      pengurusStore.setPengurus(data.datas.data);
-    })
-    .catch(({ response }) => {
-      console.error(response);
-    });
-}
-
-onMounted(() => {
-  loadWilayah();
-});
 const monographStore = useMonografWilayahStore();
+
+const infoWilayah = computed(() => {
+  let result = [];
+  for (let index = 0; index < monographStore.indukWilayah.length; index++) {
+    let level = "";
+    switch (index) {
+      case 0:
+        level = "Provinsi";
+        break;
+      case 1:
+        level = "Kab/Kota";
+        break;
+      case 2:
+        level = "Kecamatan";
+        break;
+      case 3:
+        level = "Desa/Kelurahan";
+        break;
+
+      default:
+        level = "Provinsi";
+        break;
+    }
+    const nama_wilayah = monographStore.indukWilayah[index].nama;
+    result.push({ level: level, nama: nama_wilayah });
+  }
+  if (monographStore.infoWilayah != null) {
+    result.push({
+      level: monographStore.labelWilayah.current,
+      nama: monographStore.infoWilayah.nama,
+    });
+  }
+  return result;
+});
 </script>
