@@ -19,14 +19,28 @@
 
         <ul class="nav nav-pills nav-pills-circle" id="tabs_2" role="tablist">
           <li class="nav-item" @click="goToPilihTematik">
-            <a class="nav-link border py-2 px-4 m-1" aria-selected="false">
+            <a
+              v-bind:class="
+                tematikPage
+                  ? 'nav-link active border py-2 px-4 m-1'
+                  : 'nav-link border py-2 px-4 m-1'
+              "
+              aria-selected="false"
+            >
               <span class="nav-link-icon d-block"
                 ><i class="fe fe-map"></i> Peta Tematik
               </span>
             </a>
           </li>
           <li class="nav-item" @click="searchWilayah">
-            <a class="nav-link border py-2 px-4 m-1" aria-selected="false">
+            <a
+              v-bind:class="
+                searchPage
+                  ? 'nav-link active border py-2 px-4 m-1'
+                  : 'nav-link border py-2 px-4 m-1'
+              "
+              aria-selected="false"
+            >
               <span class="nav-link-icon d-block"
                 ><i class="fe fe-search"></i> Pilih Wilayah</span
               >
@@ -79,19 +93,25 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { useRouter, RouterLink } from "vue-router";
+import { ref, computed } from "vue";
+import { useRouter, RouterLink, useRoute } from "vue-router";
 import { useThemeStore } from "@/stores/theme";
 
 const router = useRouter();
+const route = useRoute();
 const keyword = ref("");
 
+const searchPage = ref(false);
+const tematikPage = ref(false);
+
 function searchWilayah() {
+  searchPage.value = true;
   if (keyword.value == "") router.push({ name: "search" });
   else router.push({ name: "search", query: { keyword: keyword.value } });
 }
 
 function goToPilihTematik() {
+  tematikPage.value = true;
   router.push({ name: "tematik" });
 }
 

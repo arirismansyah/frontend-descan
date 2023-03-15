@@ -39,13 +39,13 @@
           </div>
         </div>
         <div class="col-3">
-          <a
-            class="btn btn-pill btn-info text-white"
-            :href="'/monograph/' + kodeWilayah"
+          <button
+            class="btn btn-pill btn-outline-info"
+            @click="toWilayah(kodeWilayah)"
           >
             <i class="fe fe-eye"></i>
             Lihat
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -54,6 +54,9 @@
 
 <script setup lang="ts">
 import { onMounted, computed } from "vue";
+import { useRouter, RouterLink, useRoute } from "vue-router";
+const router = useRouter();
+
 const props = defineProps({
   kode: { type: String },
   nama: { type: String },
@@ -73,8 +76,12 @@ const kodeWilayah = computed(() => {
   if (props.kode.substring(7, 10) != "000") return props.kode;
   else if (props.kode.substring(4, 7) != "000")
     return props.kode.substring(0, 7);
-  else if (props.kode.substring(2, 4 != "00"))
+  else if (props.kode.substring(2, 4) != "00")
     return props.kode.substring(0, 4);
   else return props.kode.substring(0, 2);
 });
+
+function toWilayah(kodeWilayah: string) {
+  router.push({ path: "/summary/" + kodeWilayah });
+}
 </script>
