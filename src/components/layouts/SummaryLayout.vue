@@ -106,5 +106,39 @@ import MapSummary from "@/components/summary/MapSummary.vue";
 import HeaderSummary from "../summary/HeaderSummary.vue";
 import { useThemeStore } from "@/stores/theme";
 
+const monografStore = useMonografWilayahStore();
+const pengurusStore = usePengurusStore();
+
+const props = defineProps({ kode: { type: String } });
+const urlApi = inject("urlApi");
+const theme = ref("light");
+const fullscreen = ref("false");
+
+async function loadWilayah() {
+  await axios
+    .get(`${urlApi}wilayah/${props.kode}/show`)
+    .then(({ data }) => {
+      monografStore.setWilayah(
+        data.datas.result,
+        data.datas.info_induk,
+        data.datas.info_child
+      );
+    })
+    .catch(({ response }) => {
+      console.error(response);
+    });
+  await axios
+    .get(`${urlApi}pengurus/${props.kode}/list`)
+    .then(({ data }) => {
+      pengurusStore.setPengurus(data.datas.data);
+    })
+    .catch(({ response }) => {
+      console.error(response);
+    });
+}
+onMounted(() => {
+  loadWilayah();
+});
+
 const themeStore = useThemeStore();
 </script>

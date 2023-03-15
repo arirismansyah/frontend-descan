@@ -42,7 +42,7 @@
               aria-selected="false"
             >
               <span class="nav-link-icon d-block"
-                ><i class="fe fe-search"></i> Pilih Wilayah</span
+                ><i class="fe fe-search"></i>Pilih Wilayah</span
               >
             </a>
           </li>
@@ -120,7 +120,6 @@ function goHome() {
 }
 
 const themeStore = useThemeStore();
-
 function changeTheme() {
   themeStore.changeTheme();
 }
