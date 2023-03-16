@@ -27,9 +27,7 @@ export const useMonografWilayahStore = defineStore("monografWilayah", {
           };
         } else if (state.infoWilayah.kode_kab != "00") {
           let kodeKabKota = state.infoWilayah.kode_kab.substring(2, 3);
-          let current = "";
-          if (kodeKabKota == "7") current = "Kota";
-          else current = "Kabupaten";
+          let current = "Kab/Kota";
 
           result = {
             current: current,
@@ -38,7 +36,7 @@ export const useMonografWilayahStore = defineStore("monografWilayah", {
         } else if (state.infoWilayah.kode_prov != "00") {
           result = {
             current: "Provinsi",
-            child: "Kabupaten/Kota",
+            child: "Kab/Kota",
           };
         }
       }

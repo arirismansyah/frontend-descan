@@ -8,24 +8,32 @@
       <div class="row justify-content-center">
         <div class="col col-auto">
           <div
-            class="counter-icon h-18 w-18 bg-info-gradient box-shadow-primary brround ms-auto"
+            class="counter-icon h-19 w-19 bg-info-gradient box-shadow-primary brround ms-auto"
           >
             <!-- LOGO WILAYAH -->
           </div>
         </div>
       </div>
 
+      <div class="row text-muted text-center justify-content-center">
+        {{ monographStore.labelWilayah.current }}
+      </div>
+      <div class="row text-center justify-content-center">
+        {{ monographStore.infoWilayah?.nama }}
+      </div>
+
       <div class="row mt-2">
         <div class="expanel expanel-default">
           <div class="expanel-body">
-            <tr v-for="wilayah in infoWilayah" :key="wilayah.level">
-              <td class="text-muted">{{ wilayah.level }}</td>
-              <td class="px-2">:</td>
-              <td>{{ wilayah.nama }}</td>
-            </tr>
+            <table class="table-stripped">
+              <tr v-for="wilayah in infoWilayah" :key="wilayah.level">
+                <td class="text-muted">{{ wilayah.level }}</td>
+                <td class="px-2">:</td>
+                <td>{{ wilayah.nama }}</td>
+              </tr>
+            </table>
           </div>
         </div>
-        <table></table>
       </div>
 
       <!-- PROFILE ELEMENTS -->

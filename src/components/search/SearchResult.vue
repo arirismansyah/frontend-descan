@@ -55,6 +55,9 @@
 <script setup lang="ts">
 import { onMounted, computed } from "vue";
 import { useRouter, RouterLink, useRoute } from "vue-router";
+import { useMenuStore } from "@/stores/menuMonograph";
+
+const menuStore = useMenuStore();
 const router = useRouter();
 
 const props = defineProps({
@@ -82,6 +85,7 @@ const kodeWilayah = computed(() => {
 });
 
 function toWilayah(kodeWilayah: string) {
+  menuStore.changeMenu("monograph");
   router.push({ path: "/monograph/" + kodeWilayah });
 }
 </script>
