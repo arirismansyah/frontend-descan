@@ -1,5 +1,5 @@
 <template>
-  <MonographLayout></MonographLayout>
+  <MonographLayout :kode="$route.params.kode as string"></MonographLayout>
 </template>
 
 <script setup lang="ts">

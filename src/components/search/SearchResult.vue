@@ -82,6 +82,14 @@ const kodeWilayah = computed(() => {
 });
 
 function toWilayah(kodeWilayah: string) {
-  router.push({ path: "/summary/" + kodeWilayah });
+  router.push({ path: "/monograph/" + kodeWilayah });
 }
 </script>
+
+<style scoped lang="css" src="@/assets/zanex/css/style.css"></style>
+<style scoped lang="css" src="@/assets/zanex/css/dark-style.css"></style>
+<style scoped lang="css" src="@/assets/zanex/css/skin-modes.css"></style>
+<style scoped lang="css" src="@/assets/zanex/css/transparent-style.css"></style>
+<style scoped lang="css" src="@/assets/zanex/css/icons.css"></style>
+<style scoped lang="css" src="@/assets/zanex/css/icons.css"></style>
+<style scoped lang="css" src="@/assets/zanex/colors/color1.css"></style>

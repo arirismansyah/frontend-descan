@@ -12,11 +12,11 @@
             <!-- CONTAINER -->
             <div class="main-container container-fluid">
               <!-- PAGE-HEADER -->
-              <!-- <SubNav></SubNav> -->
+              <SubNav></SubNav>
               <!-- PAGE-HEADER END -->
 
               <!-- ROW-0 -->
-              <div class="row mt-6">
+              <div class="row">
                 <!-- FORM SEARCH -->
                 <div class="col-lg-12 col-md-12">
                   <div class="card">
@@ -156,3 +156,11 @@ onMounted(() => {
   loadSearchWilayah();
 });
 </script>
+
+<style scoped lang="css" src="@/assets/zanex/css/style.css"></style>
+<style scoped lang="css" src="@/assets/zanex/css/dark-style.css"></style>
+<style scoped lang="css" src="@/assets/zanex/css/skin-modes.css"></style>
+<style scoped lang="css" src="@/assets/zanex/css/transparent-style.css"></style>
+<style scoped lang="css" src="@/assets/zanex/css/icons.css"></style>
+<style scoped lang="css" src="@/assets/zanex/css/icons.css"></style>
+<style scoped lang="css" src="@/assets/zanex/colors/color1.css"></style>

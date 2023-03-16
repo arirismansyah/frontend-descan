@@ -13,9 +13,18 @@
           >
             <span>
               <ul>
-                <li class="fe fe-grid mb-4 text-muted"></li>
-                <li class="text-muted">
-                  <h12 class="form-label">Monograf</h12>
+                <li
+                  v-if="menuStore.menu == 'monograph'"
+                  class="fe fe-grid mb-4 text-primary"
+                ></li>
+                <li v-else class="fe fe-grid mb-4 text-muted"></li>
+                <li>
+                  <h8
+                    v-if="menuStore.menu == 'monograph'"
+                    class="form-label text-primary"
+                    >Monograf</h8
+                  >
+                  <h12 v-else class="form-label">Monograf</h12>
                 </li>
               </ul>
             </span>
@@ -29,9 +38,18 @@
           >
             <span>
               <ul>
-                <li class="fa fa-money mb-4 text-muted"></li>
-                <li class="text-muted">
-                  <h12 class="form-label">Kemiskinan</h12>
+                <li
+                  v-if="menuStore.menu == 'kemiskinan'"
+                  class="fa fa-money mb-4 text-primary"
+                ></li>
+                <li v-else class="fa fa-money mb-4 text-muted"></li>
+                <li>
+                  <h12
+                    v-if="menuStore.menu == 'kemiskinan'"
+                    class="form-label text-primary"
+                    >Kemiskinan</h12
+                  >
+                  <h12 v-else class="form-label">Kemiskinan</h12>
                 </li>
               </ul>
             </span>
@@ -47,9 +65,18 @@
           >
             <span>
               <ul>
-                <li class="mdi mdi-baby-buggy mb-4 text-muted"></li>
-                <li class="text-muted">
-                  <h12 class="form-label">Stunting</h12>
+                <li
+                  v-if="menuStore.menu == 'stunting'"
+                  class="mdi mdi-baby-buggy mb-4 text-primary"
+                ></li>
+                <li v-else class="mdi mdi-baby-buggy mb-4 text-muted"></li>
+                <li>
+                  <h12
+                    v-if="menuStore.menu == 'stunting'"
+                    class="form-label text-primary"
+                    >Stunting</h12
+                  >
+                  <h12 v-else class="form-label">Stunting</h12>
                 </li>
               </ul>
             </span>
@@ -63,9 +90,18 @@
           >
             <span>
               <ul>
-                <li class="fa fa-shopping-basket mb-4 text-muted"></li>
-                <li class="text-muted">
-                  <h12 class="form-label">UMKM</h12>
+                <li
+                  v-if="menuStore.menu == 'umkm'"
+                  class="fa fa-shopping-basket mb-4 text-primary"
+                ></li>
+                <li v-else class="fa fa-shopping-basket mb-4 text-muted"></li>
+                <li>
+                  <h12
+                    v-if="menuStore.menu == 'umkm'"
+                    class="form-label text-primary"
+                    >UMKM</h12
+                  >
+                  <h12 v-else class="form-label">UMKM</h12>
                 </li>
               </ul>
             </span>
@@ -78,25 +114,31 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-const menuSelected = ref("monograph");
+import { useMenuStore } from "@/stores/menuMonograph";
+
+const menuStore = useMenuStore();
 
 function menuMonograph() {
-  menuSelected.value = "monograph";
-  alert(menuSelected.value);
+  menuStore.changeMenu("monograph");
 }
 
 function menuKemiskinan() {
-  menuSelected.value = "kemiskinan";
-  alert(menuSelected.value);
+  menuStore.changeMenu("kemiskinan");
 }
 
 function menuStunting() {
-  menuSelected.value = "stunting";
-  alert(menuSelected.value);
+  menuStore.changeMenu("stunting");
 }
 
 function menuUmkm() {
-  menuSelected.value = "umkm";
-  alert(menuSelected.value);
+  menuStore.changeMenu("umkm");
 }
 </script>
+
+<style scoped lang="css" src="@/assets/zanex/css/style.css"></style>
+<style scoped lang="css" src="@/assets/zanex/css/dark-style.css"></style>
+<style scoped lang="css" src="@/assets/zanex/css/skin-modes.css"></style>
+<style scoped lang="css" src="@/assets/zanex/css/transparent-style.css"></style>
+<style scoped lang="css" src="@/assets/zanex/css/icons.css"></style>
+<style scoped lang="css" src="@/assets/zanex/css/icons.css"></style>
+<style scoped lang="css" src="@/assets/zanex/colors/color1.css"></style>
