@@ -14,8 +14,6 @@ import "@/assets/zanex/css/transparent-style.css";
 import "@/assets/zanex/css/icons.css";
 import "@/assets/zanex/colors/color1.css";
 
-import "@mdi/font/css/materialdesignicons.css";
-
 const app = createApp(App);
 
 app.use(createPinia());

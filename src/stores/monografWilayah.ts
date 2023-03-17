@@ -26,11 +26,8 @@ export const useMonografWilayahStore = defineStore("monografWilayah", {
             child: "Desa/Kelurahan",
           };
         } else if (state.infoWilayah.kode_kab != "00") {
-          let kodeKabKota = state.infoWilayah.kode_kab.substring(2, 3);
-          let current = "Kab/Kota";
-
           result = {
-            current: current,
+            current: "Kab/Kota",
             child: "Kecamatan",
           };
         } else if (state.infoWilayah.kode_prov != "00") {

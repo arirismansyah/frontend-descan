@@ -72494,3 +72494,25 @@ html [type="button"],
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.bg-container {
+  position: relative;
+  height: 75%;
+  background-image: var(--secondary);
+  border-bottom-left-radius: 50% 18%;
+  border-bottom-right-radius: 50% 18%;
+  overflow: hidden;
+}
+
+.img-bg {
+  width: 100%;
+  height: auto;
+}
+
+.header-bg {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}

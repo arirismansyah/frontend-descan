@@ -1,7 +1,6 @@
 <template>
   <div class="card accordion-item" style="background: transparent">
-    <div class="card-header accordion-header">
-      <h3 class="card-title">Menu</h3>
+    <div class="card-header">
       <button
         class="accordion-button"
         type="button"
@@ -9,7 +8,9 @@
         data-bs-target="#collapseOne"
         aria-expanded="true"
         aria-controls="collapseOne"
-      ></button>
+      >
+        <h3 class="card-title">Menu</h3>
+      </button>
     </div>
     <div
       id="collapseOne"
