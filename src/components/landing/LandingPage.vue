@@ -58,13 +58,13 @@
                       <input
                         type="text"
                         class="form-control"
-                        placeholder="Search for..."
+                        placeholder="Cari Wilayah..."
                         v-model="propsShadow.keyword"
-                        v-on:keyup.enter="loadSearchWilayah"
+                        v-on:keyup.enter="searchWilayah"
                       />
                       <span
                         class="input-group-text btn btn-info"
-                        @click="loadSearchWilayah"
+                        @click="searchWilayah"
                         ><i class="fe fe-search"></i
                       ></span>
                     </div>
@@ -119,6 +119,11 @@ import axios from "axios";
 import type { Wilayah } from "@/models/Wilayah";
 import { useThemeStore } from "@/stores/theme";
 import UnitLogo from "../landing/UnitLogo.vue";
+import { useMenuStore } from "@/stores/menuMonograph";
+import { useRouter, RouterLink, useRoute } from "vue-router";
+
+const router = useRouter();
+
 const themeStore = useThemeStore();
 
 const urlApi = inject("urlApi");
@@ -166,4 +171,15 @@ async function getKabKot() {
 onMounted(() => {
   getKabKot();
 });
+
+const keyword = ref("");
+
+const menuStore = useMenuStore();
+
+function searchWilayah() {
+  menuStore.changeMenu("search");
+  keyword.value = propsShadow.keyword;
+  if (keyword.value == "") router.push({ name: "search" });
+  else router.push({ name: "search", query: { keyword: keyword.value } });
+}
 </script>
