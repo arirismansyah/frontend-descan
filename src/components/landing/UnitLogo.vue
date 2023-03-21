@@ -1,30 +1,30 @@
 <template>
-  <div class="col m-0">
-    <div class="card">
-      <div class="card-body px-3 py-3">
-        <figure
-          class="img-responsive overlay overlay-1 hover-scale rounded mb-0"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          title=""
-          :data-bs-original-title="name"
-        >
-          <a :href="'/monograph/' + kodeWilayah">
-            <img
-              class="img-responsive"
-              :src="getLogoAssets(kodeWilayah)"
-              alt=""
-              style="max-height: 80px; width: auto"
-            />
-            <span class="bg"></span>
-          </a>
-          <figcaption>
-            <small class="mdi md-map from-top"></small>
-          </figcaption>
-        </figure>
-      </div>
-      <!--/.card-body -->
+  <div class="card col m-1 py-3">
+    <div
+      class="card-body px-1 py-1"
+      data-bs-placement="top"
+      data-bs-toggle="tooltip"
+      :title="name"
+    >
+      <figure
+        class="img-responsive overlay overlay-1 hover-scale mb-0"
+        :data-bs-original-title="name"
+      >
+        <a :href="'/monograph/' + kodeWilayah">
+          <img
+            class="img-responsive"
+            :src="getLogoAssets(kodeWilayah)"
+            alt=""
+            style="max-height: 80px; width: auto"
+          />
+          <span class="bg"></span>
+        </a>
+        <figcaption>
+          <small class="mdi md-map from-top"></small>
+        </figcaption>
+      </figure>
     </div>
+    <!--/.card-body -->
   </div>
 </template>
 <script setup lang="ts">

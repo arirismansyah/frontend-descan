@@ -34,7 +34,7 @@
                       <figure
                         class="img-responsive overlay overlay-1 hover-scale mb-0 p-6"
                       >
-                        <a>
+                        <a @click="toWilayah('16')">
                           <img
                             class="img-responsive"
                             src="@/assets/images/prov-logo/logo1600.png"
@@ -139,22 +139,6 @@ const state = reactive({
 const loadingState = ref("false");
 const isLoaded = computed(() => loadingState.value === "success");
 
-async function loadSearchWilayah() {
-  loadingState.value = "false";
-  await axios
-    .post(`${urlApi}wilayah/search`, {
-      keyword: propsShadow.keyword,
-    })
-    .then(({ data }) => {
-      if (data.status == "success") {
-        state.wilayahs = data.datas;
-        loadingState.value = "success";
-      } else {
-        console.log("Data gagal disimpan, silahkan ulangi lagi");
-      }
-    });
-}
-
 async function getKabKot() {
   loadingState.value = "false";
 
@@ -181,5 +165,10 @@ function searchWilayah() {
   keyword.value = propsShadow.keyword;
   if (keyword.value == "") router.push({ name: "search" });
   else router.push({ name: "search", query: { keyword: keyword.value } });
+}
+
+function toWilayah(kodeWilayah: string) {
+  menuStore.changeMenu("monograph");
+  router.push({ path: "/monograph/" + kodeWilayah });
 }
 </script>

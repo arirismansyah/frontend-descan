@@ -72497,7 +72497,7 @@ html [type="button"],
 
 .bg-container {
   position: relative;
-  height: 75%;
+  height: 80%;
   background-image: var(--secondary);
   /* border-bottom-left-radius: 50% 18%;
   border-bottom-right-radius: 50% 18%; */

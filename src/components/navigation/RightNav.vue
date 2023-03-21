@@ -19,7 +19,7 @@
       data-bs-parent="#accordionExample"
     >
       <div class="card-body accordion-body" style="background: transparent">
-        <div class="row align-self-center mb-2 mt-2">
+        <div class="row justify-content-center mb-2 mt-2">
           <div class="col-6 col-sm-6 d-flex justify-content-center">
             <button
               @click="menuMonograph()"
