@@ -86,6 +86,7 @@ import MonographMain from "../monograph/MonographMain.vue";
 import MenuKemiskinan from "../kemiskinan/MenuKemiskinan.vue";
 import MenuStunting from "../stunting/MenuStunting.vue";
 import MenuUmkm from "../umkm/MenuUmkm.vue";
+import { computed } from "@vue/reactivity";
 
 const monografStore = useMonografWilayahStore();
 const pengurusStore = usePengurusStore();
@@ -108,9 +109,9 @@ async function loadWilayah() {
       console.error(response);
     });
   await axios
-    .get(`${urlApi}pengurus/${props.kode}/list`)
+    .get(`${urlApi}pengurus/${props.kode}/last`)
     .then(({ data }) => {
-      pengurusStore.setPengurus(data.datas.data);
+      pengurusStore.setPengurus(data.datas);
     })
     .catch(({ response }) => {
       console.error(response);

@@ -1,5 +1,5 @@
 <template>
-  <body v-bind:class="themeStore.light ? 'light-mode' : 'dark-mode'">
+  <body>
     <div class="page">
       <div class="page-main">
         <div class="bg-container view">

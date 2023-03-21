@@ -18,7 +18,7 @@
         <!-- LOGO -->
 
         <ul class="nav nav-pills nav-pills-circle" id="tabs_2" role="tablist">
-          <li class="nav-item" @click="goToPilihTematik">
+          <li class="nav-item" @click="goToPilihTematik()">
             <a
               v-bind:class="
                 menuStore.menu == 'tematik'
@@ -114,8 +114,12 @@ function searchWilayah() {
 }
 
 function goToPilihTematik() {
-  menuStore.changeMenu("tematik");
-  router.push({ name: "tematik" });
+  try {
+    router.push({ name: "tematik" });
+    menuStore.changeMenu("tematik");
+  } catch (error) {
+    alert(error);
+  }
 }
 
 function goHome() {
