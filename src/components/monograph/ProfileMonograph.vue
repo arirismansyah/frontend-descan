@@ -87,22 +87,43 @@
                 <tr>
                   <td class="text-muted">Kepala</td>
                   <td class="px-2">:</td>
-                  <td>{{ pengurusStore.pengurus.nama_ketua }}</td>
+                  <td v-if="pengurusStore.pengurus.nama_ketua != null">
+                    {{ pengurusStore.pengurus.nama_ketua }}
+                  </td>
+                  <td v-else>-</td>
                 </tr>
                 <tr>
                   <td class="text-muted">Wakil</td>
                   <td class="px-2">:</td>
-                  <td>{{ pengurusStore.pengurus.nama_wakil }}</td>
+                  <td v-if="pengurusStore.pengurus.nama_wakil != null">
+                    {{ pengurusStore.pengurus.nama_wakil }}
+                  </td>
+                  <td v-else>-</td>
                 </tr>
+                <tr>
+                  <td class="text-muted">Sekertaris</td>
+                  <td class="px-2">:</td>
+                  <td v-if="pengurusStore.pengurus.nama_sekretaris != null">
+                    {{ pengurusStore.pengurus.nama_sekretaris }}
+                  </td>
+                  <td v-else>-</td>
+                </tr>
+
                 <tr>
                   <td class="text-muted">Periode Awal</td>
                   <td class="px-2">:</td>
-                  <td>{{ pengurusStore.pengurus.periode_awal_aktif }}</td>
+                  <td v-if="pengurusStore.pengurus.periode_awal_aktif != null">
+                    {{ pengurusStore.pengurus.periode_awal_aktif }}
+                  </td>
+                  <td v-else>-</td>
                 </tr>
                 <tr>
                   <td class="text-muted">Periode Akhir</td>
                   <td class="px-2">:</td>
-                  <td>{{ pengurusStore.pengurus.periode_akhir_aktif }}</td>
+                  <td v-if="pengurusStore.pengurus.periode_akhir_aktif != null">
+                    {{ pengurusStore.pengurus.periode_akhir_aktif }}
+                  </td>
+                  <td v-else>-</td>
                 </tr>
               </table>
             </div>
@@ -154,7 +175,6 @@ const infoWilayah = computed(() => {
   }
   return result;
 });
-
 const pengurusStore = usePengurusStore();
 
 function getLogoAssets(kode: string) {

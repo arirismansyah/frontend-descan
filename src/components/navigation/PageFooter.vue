@@ -1,6 +1,6 @@
 <template>
   <!-- FOOTER -->
-  <footer class="footer fixed-bottom">
+  <footer class="footer">
     <div class="container">
       <div class="row align-items-center flex-row-reverse">
         <div class="col-md-12 col-sm-12 text-center">
@@ -15,4 +15,3 @@
   <!-- FOOTER CLOSED -->
 </template>
 <script setup lang="ts"></script>
-

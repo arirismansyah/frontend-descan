@@ -1,6 +1,6 @@
 <template>
   <div class="card accordion-item" style="background: transparent">
-    <div class="card-header">
+    <div class="card-header row">
       <button
         class="accordion-button"
         type="button"

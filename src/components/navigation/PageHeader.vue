@@ -5,15 +5,12 @@
         <a class="animated-arrow horizontal-navtoggle-1-1"><span></span></a>
         <a class="header-brand" @click="goHome">
           <img
-            src="@/assets/zanex/images/brand/logo-3.png"
-            class="header-brand-img logo-3"
+            src="@/assets/images/logo/logo.png"
+            class="header-brand-img"
             alt="Zanex logo"
           />
-          <img
-            src="@/assets/zanex/images/brand/logo.png"
-            class="header-brand-img logo"
-            alt="Zanex logo"
-          />
+
+          <span class="card-title mx-2">DESA BUMI SRIWIJAYA</span>
         </a>
         <!-- LOGO -->
 

@@ -67,7 +67,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, inject } from "vue";
+import { ref, onMounted, inject, computed } from "vue";
 import axios from "axios";
 import { storeToRefs } from "pinia";
 
@@ -81,12 +81,12 @@ import PageFooter from "../navigation/PageFooter.vue";
 import SubNav from "../navigation/SubNav.vue";
 import RightNav from "../navigation/RightNav.vue";
 import ProfileMonograph from "../monograph/ProfileMonograph.vue";
+import LoaderElement from "../navigation/LoaderElement.vue";
 
 import MonographMain from "../monograph/MonographMain.vue";
 import MenuKemiskinan from "../kemiskinan/MenuKemiskinan.vue";
 import MenuStunting from "../stunting/MenuStunting.vue";
 import MenuUmkm from "../umkm/MenuUmkm.vue";
-import { computed } from "@vue/reactivity";
 
 const monografStore = useMonografWilayahStore();
 const pengurusStore = usePengurusStore();
@@ -94,8 +94,11 @@ const menuStore = useMenuStore();
 
 const props = defineProps({ kode: { type: String } });
 const urlApi = inject("urlApi");
+const loadingState = ref("false");
+const isLoaded = computed(() => loadingState.value === "success");
 
 async function loadWilayah() {
+  loadingState.value = "false";
   await axios
     .get(`${urlApi}wilayah/${props.kode}/show`)
     .then(({ data }) => {
@@ -111,9 +114,12 @@ async function loadWilayah() {
   await axios
     .get(`${urlApi}pengurus/${props.kode}/last`)
     .then(({ data }) => {
+      pengurusStore.$reset();
       pengurusStore.setPengurus(data.datas);
+      loadingState.value = "success";
     })
     .catch(({ response }) => {
+      pengurusStore.$reset();
       console.error(response);
     });
 }

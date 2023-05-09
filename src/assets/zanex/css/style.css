@@ -72504,6 +72504,15 @@ html [type="button"],
   overflow: hidden;
 }
 
+.bg-container-content {
+  position: relative;
+  height: 350px;
+  background-color: var(--primary);
+  
+  overflow: hidden;
+}
+
+
 .img-bg {
   width: 100%;
   height: auto;
@@ -72512,6 +72521,7 @@ html [type="button"],
 .header-bg {
   position: absolute;
   top: 0;
+  bottom: 0;
   right: 0;
   left: 0;
   z-index: 3;
@@ -72534,5 +72544,5 @@ html [type="button"],
   left: 0;
   bottom: 0;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.25);
 }
