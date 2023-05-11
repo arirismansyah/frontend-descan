@@ -164,9 +164,8 @@
                                 >
                                   {{ pengurusStore.pengurus.nama_ketua }}
                                 </span>
-                                <h6 class="text-muted" v-else>
-                                  Belum ada data
-                                </h6>
+
+                                Belum ada data
                               </div>
                             </button>
                           </div>
