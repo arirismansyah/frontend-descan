@@ -90,7 +90,7 @@
                   <td v-if="pengurusStore.pengurus.nama_ketua != null">
                     {{ pengurusStore.pengurus.nama_ketua }}
                   </td>
-                  <td v-else>-</td>
+                  <td v-else class="text-muted">Belum ada data</td>
                 </tr>
                 <tr>
                   <td class="text-muted">Wakil</td>
@@ -98,7 +98,7 @@
                   <td v-if="pengurusStore.pengurus.nama_wakil != null">
                     {{ pengurusStore.pengurus.nama_wakil }}
                   </td>
-                  <td v-else>-</td>
+                  <td v-else class="text-muted">Belum ada data</td>
                 </tr>
                 <tr>
                   <td class="text-muted">Sekertaris</td>
@@ -106,7 +106,7 @@
                   <td v-if="pengurusStore.pengurus.nama_sekretaris != null">
                     {{ pengurusStore.pengurus.nama_sekretaris }}
                   </td>
-                  <td v-else>-</td>
+                  <td v-else class="text-muted">Belum ada data</td>
                 </tr>
 
                 <tr>
@@ -115,7 +115,7 @@
                   <td v-if="pengurusStore.pengurus.periode_awal_aktif != null">
                     {{ pengurusStore.pengurus.periode_awal_aktif }}
                   </td>
-                  <td v-else>-</td>
+                  <td v-else class="text-muted">Belum ada data</td>
                 </tr>
                 <tr>
                   <td class="text-muted">Periode Akhir</td>
@@ -123,7 +123,7 @@
                   <td v-if="pengurusStore.pengurus.periode_akhir_aktif != null">
                     {{ pengurusStore.pengurus.periode_akhir_aktif }}
                   </td>
-                  <td v-else>-</td>
+                  <td v-else class="text-muted">Belum ada data</td>
                 </tr>
               </table>
             </div>

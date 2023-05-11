@@ -37,110 +37,140 @@
             <!-- TAB CONTENT DESC -->
             <div class="tab-pane active" id="deskripsi">
               <LoaderElement v-if="!isLoaded"></LoaderElement>
-              <div
-                v-else
-                class="col-lg-12 col-md-12"
-                style="background-color: #6259ca"
-              >
-                <div class="row">
-                  <!-- COL 1 - COL-9 -->
-                  <div class="col-lg-8 col-md-8">
-                    <!-- ROW BAWAH DESKRIPSI DAERAH -->
-                    <div class="row">
-                      <div class="col p-6">
-                        <div class="row mb-6">
-                          <div
-                            class="col d-flex justify-content-start align-items-center"
-                          >
-                            <!-- LOGO PARENT -->
-                            <figure
-                              class="img-responsive hover-scale mb-0 align-items-center"
+              <div v-else class="bg-container-content">
+                <img
+                  class="img-bg"
+                  src="@/assets/images/footage/img_(12).jpg"
+                />
+                <div class="mask-bg">
+                  <div class="row">
+                    <div class="col-lg-8 col-md-8">
+                      <!-- DESKRIPSI DAERAH -->
+                      <div class="row">
+                        <div class="col p-6">
+                          <div class="row mb-6">
+                            <div
+                              class="col d-flex justify-content-start align-items-center"
                             >
-                              <a :href="'/monograph/' + 16">
-                                <img
-                                  class="img-responsive"
-                                  :src="getLogoAssets('16')"
-                                  alt=""
-                                  style="max-height: 80px; width: auto"
-                                />
-                                <span class="bg"></span>
-                              </a>
-                            </figure>
-
-                            <!-- LOGO DAERAH -->
-
-                            <figure
-                              v-if="
-                                monographStore.infoWilayah?.kode_kab != '00'
-                              "
-                              class="img-responsive hover-scale mb-0"
-                            >
-                              <a
-                                :href="
-                                  '/monograph/' +
-                                  monographStore.infoWilayah?.kode_wilayah
-                                "
+                              <!-- LOGO PROV -->
+                              <figure
+                                class="img-responsive hover-scale mb-0 align-items-center"
                               >
-                                <img
-                                  class="img-responsive"
-                                  :src="
-                                    getLogoAssets(
-                                      monographStore.infoWilayah?.kode_wilayah
-                                    )
-                                  "
-                                  alt=""
-                                  style="max-height: 72px; width: auto"
-                                />
-                                <span class="bg"></span>
-                              </a>
-                            </figure>
+                                <a :href="'/monograph/' + 16">
+                                  <img
+                                    class="img-responsive"
+                                    :src="getLogoAssets('16')"
+                                    alt=""
+                                    style="max-height: 80px; width: auto"
+                                  />
+                                  <span class="bg"></span>
+                                </a>
+                              </figure>
 
-                            <!-- JUDUL - NAMA DAERAH -->
-                            <div class="col">
-                              <div class="row">
-                                <h6 class="text-white mx-4 my-auto">
-                                  {{ monographStore.labelWilayah["current"] }}
-                                  :
-                                </h6>
-                              </div>
-                              <div class="row">
-                                <h3 class="text-white mx-4 my-auto">
-                                  {{ monographStore.infoWilayah?.nama }}
-                                </h3>
+                              <!-- LOGO DAERAH -->
+                              <figure
+                                v-if="
+                                  monographStore.infoWilayah?.kode_kab != '00'
+                                "
+                                class="img-responsive hover-scale mb-0"
+                              >
+                                <a
+                                  :href="
+                                    '/monograph/' +
+                                    monographStore.infoWilayah?.kode_wilayah
+                                  "
+                                >
+                                  <img
+                                    class="img-responsive"
+                                    :src="
+                                      getLogoAssets(
+                                        monographStore.infoWilayah?.kode_wilayah
+                                      )
+                                    "
+                                    alt=""
+                                    style="max-height: 72px; width: auto"
+                                  />
+                                  <span class="bg"></span>
+                                </a>
+                              </figure>
+
+                              <!-- JUDUL - NAMA DAERAH -->
+                              <div class="col">
+                                <div class="row">
+                                  <h6 class="text-white mx-4 my-auto">
+                                    {{ monographStore.labelWilayah["current"] }}
+                                    :
+                                  </h6>
+                                </div>
+                                <div class="row">
+                                  <h3 class="text-white mx-4 my-auto">
+                                    {{ monographStore.infoWilayah?.nama }}
+                                  </h3>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
 
-                        <p class="text-start text-white fs-6">
-                          {{ deskripsi }}
-                        </p>
+                          <!-- DESKRIPSI -->
+                          <p class="text-start text-white fs-6">
+                            {{ deskripsi }}
+                          </p>
+                          <!-- DESKRIPSI -->
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="col-lg-4 col-md-4">
-                    <div class="row">
-                      <!-- NAMA KEPALA DAERAH -->
-                      <div class="col p-6">
-                        <div class="row mb-4">
-                          <img
-                            :src="pengurusStore.pengurus.foto"
-                            alt=""
-                            srcset=""
-                          />
-                        </div>
-                        <div class="row">
-                          <button type="button" class="btn btn-info">
-                            <div class="row text-center justify-content-center">
-                              <span
-                                v-if="pengurusStore.pengurus.nama_ketua != null"
+                    <!-- KEPALA DAERAH -->
+                    <div class="col-lg-4 col-md-4">
+                      <div class="row">
+                        <div class="col p-6 align-items-center">
+                          <!-- FOTO KEPALA DAERAH -->
+                          <div class="row mb-4 justify-content-center">
+                            <img
+                              v-if="
+                                pengurusStore.pengurus.foto != undefined &&
+                                pengurusStore.pengurus.foto.split('/')[5] !=
+                                  'null'
+                              "
+                              :src="pengurusStore.pengurus.foto"
+                              alt=""
+                              srcset=""
+                              style="max-height: 250px; width: auto"
+                            />
+                            <img
+                              v-else
+                              src="@/assets/images/icon/profile.png"
+                              alt=""
+                              srcset=""
+                            />
+                          </div>
+                          <!-- FOTO KEPALA DAERAH -->
+
+                          <!-- NAMA KEPALA DAERAH -->
+                          <div class="row justify-content-center text-center">
+                            <h6 class="font-weight-bold text-white">
+                              Kepala Daerah
+                            </h6>
+                          </div>
+                          <div class="row justify-content-center">
+                            <button type="button" class="btn btn-info">
+                              <div
+                                class="row text-center justify-content-center"
                               >
-                                {{ pengurusStore.pengurus.nama_ketua }}
-                              </span>
-                              <h6 v-else>Belum ada data</h6>
-                            </div>
-                          </button>
+                                <span
+                                  v-if="
+                                    pengurusStore.pengurus.nama_ketua != null
+                                  "
+                                >
+                                  {{ pengurusStore.pengurus.nama_ketua }}
+                                </span>
+                                <h6 class="text-muted" v-else>
+                                  Belum ada data
+                                </h6>
+                              </div>
+                            </button>
+                          </div>
+                          <!-- NAMA KEPALA DAERAH -->
                         </div>
                       </div>
                     </div>
@@ -148,8 +178,10 @@
                 </div>
               </div>
             </div>
+
             <!-- TAB CONTENT GENERAL -->
             <div class="tab-pane" id="general"></div>
+
             <!-- TAB CONTENT PENGURUS -->
             <div class="tab-pane" id="pengurus">
               <div class="table-responsive">
@@ -165,7 +197,7 @@
                       <td v-if="pengurusStore.pengurus.nama_ketua != null">
                         {{ pengurusStore.pengurus.nama_ketua }}
                       </td>
-                      <td v-else>-</td>
+                      <td v-else class="text-muted">Belum ada data</td>
                     </tr>
                     <tr>
                       <td class="text-muted">
@@ -175,7 +207,7 @@
                       <td v-if="pengurusStore.pengurus.nama_wakil != null">
                         {{ pengurusStore.pengurus.nama_wakil }}
                       </td>
-                      <td v-else>-</td>
+                      <td v-else class="text-muted">Belum ada data</td>
                     </tr>
                     <tr>
                       <td class="text-muted">
@@ -185,7 +217,7 @@
                       <td v-if="pengurusStore.pengurus.nama_sekretaris != null">
                         {{ pengurusStore.pengurus.nama_sekretaris }}
                       </td>
-                      <td v-else>-</td>
+                      <td v-else class="text-muted">Belum ada data</td>
                     </tr>
                     <tr>
                       <td class="text-muted">
@@ -199,7 +231,7 @@
                           v-html="pengurusStore.pengurus.pengurus_lainnya"
                         ></div>
                       </td>
-                      <td v-else>-</td>
+                      <td v-else class="text-muted">Belum ada data</td>
                     </tr>
                     <tr>
                       <td class="text-muted">
@@ -211,7 +243,7 @@
                       >
                         {{ pengurusStore.pengurus.periode_awal_aktif }}
                       </td>
-                      <td v-else>-</td>
+                      <td v-else class="text-muted">Belum ada data</td>
                     </tr>
                     <tr>
                       <td class="text-muted">
@@ -225,12 +257,13 @@
                       >
                         {{ pengurusStore.pengurus.periode_akhir_aktif }}
                       </td>
-                      <td v-else>-</td>
+                      <td v-else class="text-muted">Belum ada data</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
+
             <!-- TAB CONTENT FASILITAS -->
             <div class="tab-pane" id="fasilitas">
               <div class="row">

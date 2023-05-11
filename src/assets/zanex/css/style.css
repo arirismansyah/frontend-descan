@@ -72506,7 +72506,7 @@ html [type="button"],
 
 .bg-container-content {
   position: relative;
-  height: 350px;
+  height: 400px;
   background-color: var(--primary);
   
   overflow: hidden;
