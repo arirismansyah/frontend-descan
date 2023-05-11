@@ -40,7 +40,7 @@
               <div v-else class="bg-container-content">
                 <img
                   class="img-bg"
-                  src="@/assets/images/footage/img_(12).jpg"
+                  src="@/assets/images/footage/img_(12) copy.jpg"
                 />
                 <div class="mask-bg">
                   <div class="row">
