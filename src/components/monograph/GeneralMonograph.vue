@@ -165,7 +165,7 @@
                                   {{ pengurusStore.pengurus.nama_ketua }}
                                 </span>
 
-                                Belum ada data
+                                <span v-else>Belum ada data</span>
                               </div>
                             </button>
                           </div>
