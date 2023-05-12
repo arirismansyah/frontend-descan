@@ -121,10 +121,12 @@ import { useThemeStore } from "@/stores/theme";
 import UnitLogo from "../landing/UnitLogo.vue";
 import { useMenuStore } from "@/stores/menuMonograph";
 import { useRouter, RouterLink, useRoute } from "vue-router";
+import { useKodeWilayahStore } from "@/stores/kodeWilayah";
 
 const router = useRouter();
 
 const themeStore = useThemeStore();
+const kodeWilayahStore = useKodeWilayahStore();
 
 const urlApi = inject("urlApi");
 let props = defineProps({
@@ -168,6 +170,7 @@ function searchWilayah() {
 }
 
 function toWilayah(kodeWilayah: string) {
+  kodeWilayahStore.changeKode(kodeWilayah);
   menuStore.changeMenu("monograph");
   router.push({ path: "/monograph/" + kodeWilayah });
 }

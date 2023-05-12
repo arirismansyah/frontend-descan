@@ -56,8 +56,10 @@
 import { onMounted, computed } from "vue";
 import { useRouter, RouterLink, useRoute } from "vue-router";
 import { useMenuStore } from "@/stores/menuMonograph";
+import { useKodeWilayahStore } from "@/stores/kodeWilayah";
 
 const menuStore = useMenuStore();
+const kodeWilayahStore = useKodeWilayahStore();
 const router = useRouter();
 
 const props = defineProps({
@@ -85,8 +87,8 @@ const kodeWilayah = computed(() => {
 });
 
 function toWilayah(kodeWilayah: string) {
+  kodeWilayahStore.changeKode(kodeWilayah);
   menuStore.changeMenu("monograph");
   router.push({ path: "/monograph/" + kodeWilayah });
 }
 </script>
-

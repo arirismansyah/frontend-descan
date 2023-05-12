@@ -16,6 +16,7 @@ import axios from "axios";
 import { ref, inject, computed, onMounted } from "vue";
 import { useMonografWilayahStore } from "@/stores/monografWilayah";
 import { useMapDesaStore } from "@/stores/mapDesa";
+import { useKodeWilayahStore } from "@/stores/kodeWilayah";
 import LoaderElement from "../navigation/LoaderElement.vue";
 import "leaflet/dist/leaflet.css";
 
@@ -24,6 +25,7 @@ const isLoaded = computed(() => loadingState.value === "success");
 const urlApi = inject("urlApi");
 const monographStore = useMonografWilayahStore();
 const mapStore = useMapDesaStore();
+const kodeWilayahStore = useKodeWilayahStore();
 const map = ref(null);
 
 async function getMap(kodeKab: string) {
@@ -41,7 +43,7 @@ async function getMap(kodeKab: string) {
 }
 
 onMounted(() => {
-  const kodeKab = monographStore.infoWilayah?.kode_wilayah.substring(0, 4);
+  const kodeKab = kodeWilayahStore.$state.kode.substring(0, 4);
   getMap(kodeKab);
 });
 </script>
