@@ -86,7 +86,8 @@
                 <img
                   v-if="
                     pengurusStore.pengurus.foto != undefined &&
-                    pengurusStore.pengurus.foto.split('/')[5] != 'null'
+                    pengurusStore.pengurus.foto.split('/')[5] != 'null' &&
+                    pengurusStore.pengurus.foto.split('/')[5] != ''
                   "
                   :src="pengurusStore.pengurus.foto"
                   alt=""
@@ -144,7 +145,7 @@ const kodeWilayahStore = useKodeWilayahStore();
 async function getDeskripsi() {
   loadingState.value = "false";
   await axios
-    .get(`${urlApi}wilayah/${kodeWilayahStore.$state.kode}/deskripsi`)
+    .get(`${urlApi}wilayah/${kodeWilayahStore.kode?.kode}/deskripsi`)
     .then(({ data }) => {
       if (data.datas.deskripsi == "") {
         axios.get(`${urlApi}wilayah/16/deskripsi`).then(({ data }) => {

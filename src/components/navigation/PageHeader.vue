@@ -39,7 +39,7 @@
               aria-selected="false"
             >
               <span class="nav-link-icon d-block"
-                ><i class="fe fe-search"></i>Pilih Wilayah</span
+                ><i class="fe fe-search"></i> Pilih Wilayah</span
               >
             </a>
           </li>
@@ -90,7 +90,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { useRouter, RouterLink, useRoute } from "vue-router";
 import { useThemeStore } from "@/stores/theme";
 import { useMenuStore } from "@/stores/menuMonograph";
@@ -127,4 +127,10 @@ const themeStore = useThemeStore();
 function changeTheme() {
   themeStore.changeTheme();
 }
+
+onMounted(() => {
+  window.onpopstate = function () {
+    router.go(-1);
+  };
+});
 </script>

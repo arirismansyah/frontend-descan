@@ -67,7 +67,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, inject, computed } from "vue";
+import { ref, onMounted, inject, computed, onBeforeMount } from "vue";
 import axios from "axios";
 import { storeToRefs } from "pinia";
 
@@ -75,6 +75,7 @@ import { useMonografWilayahStore } from "@/stores/monografWilayah";
 import { usePengurusStore } from "@/stores/pengurusWilayah";
 import { useThemeStore } from "@/stores/theme";
 import { useMenuStore } from "@/stores/menuMonograph";
+import { useKodeWilayahStore } from "@/stores/kodeWilayah";
 
 import PageHeader from "../navigation/PageHeader.vue";
 import PageFooter from "../navigation/PageFooter.vue";
@@ -91,6 +92,7 @@ import MenuUmkm from "../umkm/MenuUmkm.vue";
 const monografStore = useMonografWilayahStore();
 const pengurusStore = usePengurusStore();
 const menuStore = useMenuStore();
+const kodeWilayahStore = useKodeWilayahStore();
 
 const props = defineProps({ kode: { type: String } });
 const urlApi = inject("urlApi");
@@ -124,6 +126,7 @@ async function loadWilayah() {
     });
 }
 onMounted(() => {
+  kodeWilayahStore.changeKode(props.kode as string);
   loadWilayah();
 });
 

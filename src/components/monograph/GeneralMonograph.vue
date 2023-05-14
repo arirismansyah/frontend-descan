@@ -46,84 +46,7 @@
 
             <!-- TAB CONTENT PENGURUS -->
             <div class="tab-pane" id="pengurus">
-              <div class="table-responsive">
-                <table
-                  class="table border text-nowrap text-md-nowrap table-striped mg-b-0"
-                >
-                  <tbody>
-                    <tr>
-                      <td class="text-muted">
-                        <strong>Kepala Daerah</strong>
-                      </td>
-                      <td class="px-2">:</td>
-                      <td v-if="pengurusStore.pengurus.nama_ketua != null">
-                        {{ pengurusStore.pengurus.nama_ketua }}
-                      </td>
-                      <td v-else class="text-muted">Belum ada data</td>
-                    </tr>
-                    <tr>
-                      <td class="text-muted">
-                        <strong>Wakil</strong>
-                      </td>
-                      <td class="px-2">:</td>
-                      <td v-if="pengurusStore.pengurus.nama_wakil != null">
-                        {{ pengurusStore.pengurus.nama_wakil }}
-                      </td>
-                      <td v-else class="text-muted">Belum ada data</td>
-                    </tr>
-                    <tr>
-                      <td class="text-muted">
-                        <strong>Sekretaris</strong>
-                      </td>
-                      <td class="px-2">:</td>
-                      <td v-if="pengurusStore.pengurus.nama_sekretaris != null">
-                        {{ pengurusStore.pengurus.nama_sekretaris }}
-                      </td>
-                      <td v-else class="text-muted">Belum ada data</td>
-                    </tr>
-                    <tr>
-                      <td class="text-muted">
-                        <strong>Pengurus Lainnya</strong>
-                      </td>
-                      <td class="px-2">:</td>
-                      <td
-                        v-if="pengurusStore.pengurus.pengurus_lainnya != null"
-                      >
-                        <div
-                          v-html="pengurusStore.pengurus.pengurus_lainnya"
-                        ></div>
-                      </td>
-                      <td v-else class="text-muted">Belum ada data</td>
-                    </tr>
-                    <tr>
-                      <td class="text-muted">
-                        <strong>Periode Awal</strong>
-                      </td>
-                      <td class="px-2">:</td>
-                      <td
-                        v-if="pengurusStore.pengurus.periode_awal_aktif != null"
-                      >
-                        {{ pengurusStore.pengurus.periode_awal_aktif }}
-                      </td>
-                      <td v-else class="text-muted">Belum ada data</td>
-                    </tr>
-                    <tr>
-                      <td class="text-muted">
-                        <strong>Periode Akhir</strong>
-                      </td>
-                      <td class="px-2">:</td>
-                      <td
-                        v-if="
-                          pengurusStore.pengurus.periode_akhir_aktif != null
-                        "
-                      >
-                        {{ pengurusStore.pengurus.periode_akhir_aktif }}
-                      </td>
-                      <td v-else class="text-muted">Belum ada data</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <PengurusTabMonograph></PengurusTabMonograph>
             </div>
 
             <!-- TAB CONTENT FASILITAS -->
@@ -206,7 +129,7 @@ import { usePengurusStore } from "@/stores/pengurusWilayah";
 import LoaderElement from "../navigation/LoaderElement.vue";
 import DescriptionTabMonograph from "./DescriptionTabMonograph.vue";
 import GeneralTabMonograph from "./GeneralTabMonograph.vue";
-import PengurusTabMonograph from "./pengurus/PengurusTabMonograph.vue";
+import PengurusTabMonograph from "@/components/monograph/pengurus/PengurusTabMonograph.vue";
 import FasilitasTabMonograph from "./fasilitas/FasilitasTabMonograph.vue";
 
 const pengurusStore = usePengurusStore();

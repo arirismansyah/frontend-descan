@@ -9,3 +9,7 @@ export interface Wilayah {
   nama_kab?: string;
   nama_kec?: string;
 }
+
+export interface KodeWilayah {
+  kode: string;
+}

@@ -43,7 +43,7 @@ async function getMap(kodeKab: string) {
 }
 
 onMounted(() => {
-  const kodeKab = kodeWilayahStore.$state.kode.substring(0, 4);
-  getMap(kodeKab);
+  const kodeKab = kodeWilayahStore.kode?.kode.substring(0, 4);
+  // getMap(kodeKab);
 });
 </script>
