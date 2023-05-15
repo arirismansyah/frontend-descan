@@ -215,7 +215,7 @@
           </div>
           <div class="expanel-body">
             <div
-              v-if="jumlahPenduduk != null && jumlahPenduduk != 0"
+              v-if="jumlahPenduduk != null && !isNaN(jumlahPenduduk)"
               class="expanel-body text-center"
             >
               <h3 class="number-font">
@@ -262,7 +262,7 @@
           </div>
           <div class="expanel-body">
             <div
-              v-if="jumlahDisabilitas != null && jumlahDisabilitas != 0"
+              v-if="jumlahDisabilitas != null && !isNaN(jumlahDisabilitas)"
               class="expanel-body text-center"
             >
               <h3 class="number-font">
@@ -339,11 +339,18 @@ async function getMonograph() {
               jumlahKeluarga.value = element["nilai"];
               break;
             case "jumlah_penduduk":
-              jumlahPenduduk.value = jumlahPenduduk.value + element["nilai"];
+              jumlahPenduduk.value =
+                parseInt(jumlahPenduduk.value) + parseInt(element["nilai"]);
               break;
             case "penyandang_disabilitas":
-              jumlahDisabilitas.value =
-                jumlahDisabilitas.value + element["nilai"];
+              if (jumlahDisabilitas.value != null) {
+                jumlahDisabilitas.value =
+                  parseInt(jumlahDisabilitas.value) +
+                  parseInt(element["nilai"]);
+              } else {
+                jumlahDisabilitas.value = 0 + parseInt(element["nilai"]);
+              }
+
               break;
             default:
               break;

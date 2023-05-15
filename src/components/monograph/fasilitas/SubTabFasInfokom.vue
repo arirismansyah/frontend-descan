@@ -66,7 +66,6 @@ async function getFasInfokom() {
     .then(({ data }) => {
       if (data.status == "success") {
         state.fasInfokom = data.datas;
-        console.log(state.fasInfokom);
 
         loadingState.value = "success";
       } else {

@@ -66,8 +66,6 @@ async function getFasTransportasi() {
     .then(({ data }) => {
       if (data.status == "success") {
         state.fasTransportasi = data.datas;
-        console.log(state.fasTransportasi);
-
         loadingState.value = "success";
       } else {
         console.log("Data gagal disimpan, silahkan ulangi lagi");

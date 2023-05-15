@@ -68,7 +68,6 @@ async function getFasPendidikan() {
           }
         });
         // state.fasPendidikan = data.datas;
-        console.log(state.fasPendidikan);
 
         loadingState.value = "success";
       } else {

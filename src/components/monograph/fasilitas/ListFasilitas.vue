@@ -61,5 +61,4 @@ const props = defineProps({
   index: { type: Number },
   kategori_custom: { type: String },
 });
-console.log(props.index);
 </script>

@@ -68,7 +68,6 @@ async function getFasIbadah() {
           }
         });
         // state.fasIbadah = data.datas;
-        console.log(state.fasIbadah);
 
         loadingState.value = "success";
       } else {

@@ -64,8 +64,6 @@ async function getFasOlahraga() {
     .then(({ data }) => {
       if (data.status == "success") {
         state.fasOlahraga = data.datas;
-        console.log(state.fasOlahraga);
-
         loadingState.value = "success";
       } else {
         console.log("Data gagal disimpan, silahkan ulangi lagi");

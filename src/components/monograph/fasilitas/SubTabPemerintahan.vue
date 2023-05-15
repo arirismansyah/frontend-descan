@@ -66,7 +66,6 @@ async function getFasPemerintahan() {
     .then(({ data }) => {
       if (data.status == "success") {
         state.fasPemerintahan = data.datas;
-        console.log(state.fasPemerintahan);
 
         loadingState.value = "success";
       } else {

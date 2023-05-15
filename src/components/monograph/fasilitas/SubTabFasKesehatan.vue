@@ -68,7 +68,7 @@ async function getFaskes() {
           }
         });
         // state.fasKesehatan = data.datas;
-        console.log(state.fasKesehatan);
+        
 
         loadingState.value = "success";
       } else {
