@@ -7,8 +7,20 @@
         ></i
         ><span class="card-title">Periode: </span>
         <span class="text-muted"
-          >{{ props.periode_awal_aktif }} s.d.
-          {{ props.periode_akhir_aktif }}</span
+          ><strong>
+            {{ props.periode_awal_aktif }} s.d.
+            {{ props.periode_akhir_aktif }}
+          </strong>
+        </span>
+        <span
+          v-if="props.status_aktif == '1'"
+          class="badge rounded-pill bg-success mx-4 me-1 mb-1 mt-1"
+          >Aktif</span
+        >
+        <span
+          v-else
+          class="badge px-4 rounded-pill bg-danger mx-4 me-1 mb-1 mt-1"
+          >Tidak Aktif</span
         >
       </h6>
     </div>
@@ -43,7 +55,7 @@
               class="accordion-button collapsed active"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#collapsePengurusLain"
+              :data-bs-target="'#collapsePengurusLain_' + props.index"
               aria-expanded="false"
               aria-controls="collapsePengurusLain"
             >
@@ -51,14 +63,16 @@
             </button>
           </h2>
           <div
-            id="collapsePengurusLain"
+            :id="'collapsePengurusLain_' + props.index"
             class="accordion-collapse collapse"
             aria-labelledby="headingPengurusLain"
             data-bs-parent="#accordionPengurus"
             style=""
           >
             <div class="accordion-body">
-              {{ props.pengurus_lainnya }}
+              <p>
+                {{ props.pengurus_lainnya }}
+              </p>
             </div>
           </div>
         </div>
@@ -75,5 +89,6 @@ const props = defineProps({
   nama_wakil: { type: String },
   nama_sekretaris: { type: String },
   pengurus_lainnya: { type: String },
+  index: { type: Number },
 });
 </script>

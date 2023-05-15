@@ -1,33 +1,35 @@
 <template>
   <div class="row">
     <div class="col-lg-12 col-md-12">
-      <div class="card">
-        <div class="card-body justify-content-middle scroll">
-          <div class="content vscroll" style="max-height: 600px">
-            <div
-              v-if="!isLoaded"
-              class="row d-flex justify-content-center justify-content-middle"
-            >
-              <LoaderElement></LoaderElement>
+      <div class="justify-content-middle scroll">
+        <div class="content vscroll" style="max-height: 600px">
+          <div
+            v-if="!isLoaded"
+            class="row d-flex justify-content-center justify-content-middle"
+          >
+            <LoaderElement></LoaderElement>
+          </div>
+          <div
+            v-else
+            class="row d-flex justify-content-center justify-content-middle"
+          >
+            <div class="col-lg col-md" v-if="state.listPengurus.length > 0">
+              <ListPengurus
+                v-for="(data, idx) in state.listPengurus"
+                :key="idx"
+                :periode_awal_aktif="data.periode_awal_aktif"
+                :periode_akhir_aktif="data.periode_akhir_aktif"
+                :nama_ketua="data.nama_ketua"
+                :nama_wakil="data.nama_wakil"
+                :nama_sekretaris="data.nama_sekretaris"
+                :pengurus_lainnya="data.pengurus_lainnya"
+                :index="idx"
+                :status_aktif="data.status_aktif"
+              >
+              </ListPengurus>
             </div>
-            <div
-              v-else
-              class="row d-flex justify-content-center justify-content-middle"
-            >
-              <div class="col-lg col-md" v-if="state.listPengurus.length > 0">
-                <ListPengurus
-                  v-for="(data, idx) in state.listPengurus"
-                  :key="idx"
-                  :periode_awal_aktif="data.periode_awal_aktif"
-                  :periode_akhir_aktif="data.periode_akhir_aktif"
-                  :nama_ketua="data.nama_ketua"
-                  :nama_wakil="data.nama_wakil"
-                  :nama_sekretaris="data.nama_sekretaris"
-                  :pengurus_lainnya="data.pengurus_lainnya"
-                >
-                </ListPengurus>
-              </div>
-              <div v-else class="col-lg-4 col-md-4">Belum ada data</div>
+            <div v-else class="col-lg-4 col-md-4 justify-content-center mb-4">
+              <h3 class="card-title text-muted text-center">Belum ada data</h3>
             </div>
           </div>
         </div>

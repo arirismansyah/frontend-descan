@@ -103,14 +103,30 @@
                 </div>
                 <div class="col-9">
                   <div class="tab-content">
-                    <div class="tab-pane active" id="fas1">Pemerintahan</div>
-                    <div class="tab-pane" id="fas2">Kesehatan</div>
-                    <div class="tab-pane" id="fas3">Pendidikan</div>
-                    <div class="tab-pane" id="fas4">Ekonomi</div>
-                    <div class="tab-pane" id="fas5">Tempat Ibadah</div>
-                    <div class="tab-pane" id="fas6">Transportasi</div>
-                    <div class="tab-pane" id="fas7">Informasi Komunikasi</div>
-                    <div class="tab-pane" id="fas8">Olahraga</div>
+                    <div class="tab-pane active" id="fas1">
+                      <SubTabPemerintahan></SubTabPemerintahan>
+                    </div>
+                    <div class="tab-pane" id="fas2">
+                      <SubTabFasKesehatan></SubTabFasKesehatan>
+                    </div>
+                    <div class="tab-pane" id="fas3">
+                      <SubTabFasPendidikan></SubTabFasPendidikan>
+                    </div>
+                    <div class="tab-pane" id="fas4">
+                      <SubTabFasEkonomi></SubTabFasEkonomi>
+                    </div>
+                    <div class="tab-pane" id="fas5">
+                      <SubTabFasIbadah></SubTabFasIbadah>
+                    </div>
+                    <div class="tab-pane" id="fas6">
+                      <SubTabFasTransportasi></SubTabFasTransportasi>
+                    </div>
+                    <div class="tab-pane" id="fas7">
+                      <SubTabFasInfokom></SubTabFasInfokom>
+                    </div>
+                    <div class="tab-pane" id="fas8">
+                      <SubTabOlahraga></SubTabOlahraga>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -130,7 +146,14 @@ import LoaderElement from "../navigation/LoaderElement.vue";
 import DescriptionTabMonograph from "./DescriptionTabMonograph.vue";
 import GeneralTabMonograph from "./GeneralTabMonograph.vue";
 import PengurusTabMonograph from "@/components/monograph/pengurus/PengurusTabMonograph.vue";
-import FasilitasTabMonograph from "./fasilitas/FasilitasTabMonograph.vue";
+import SubTabFasKesehatan from "./fasilitas/SubTabFasKesehatan.vue";
+import SubTabFasPendidikan from "./fasilitas/SubTabFasPendidikan.vue";
+import SubTabFasEkonomi from "./fasilitas/SubTabFasEkonomi.vue";
+import SubTabFasIbadah from "./fasilitas/SubTabFasIbadah.vue";
+import SubTabFasTransportasi from "./fasilitas/SubTabFasTransportasi.vue";
+import SubTabFasInfokom from "./fasilitas/SubTabFasInfokom.vue";
+import SubTabOlahraga from "./fasilitas/SubTabOlahraga.vue";
+import SubTabPemerintahan from "./fasilitas/SubTabPemerintahan.vue";
 
 const pengurusStore = usePengurusStore();
 </script>
