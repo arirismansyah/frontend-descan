@@ -76,6 +76,7 @@ import { usePengurusStore } from "@/stores/pengurusWilayah";
 import { useThemeStore } from "@/stores/theme";
 import { useMenuStore } from "@/stores/menuMonograph";
 import { useKodeWilayahStore } from "@/stores/kodeWilayah";
+import { useDataMonographStore } from "@/stores/dataMonograph";
 
 import PageHeader from "../navigation/PageHeader.vue";
 import PageFooter from "../navigation/PageFooter.vue";
@@ -93,6 +94,7 @@ const monografStore = useMonografWilayahStore();
 const pengurusStore = usePengurusStore();
 const menuStore = useMenuStore();
 const kodeWilayahStore = useKodeWilayahStore();
+const dataMonographStore = useDataMonographStore();
 
 const props = defineProps({ kode: { type: String } });
 const urlApi = inject("urlApi");
@@ -122,6 +124,17 @@ async function loadWilayah() {
     })
     .catch(({ response }) => {
       pengurusStore.$reset();
+      console.error(response);
+    });
+  await axios
+    .get(`${urlApi}dashboard/${props.kode}/monograph`)
+    .then(({ data }) => {
+      dataMonographStore.$reset();
+      dataMonographStore.setData(data.datas);
+      loadingState.value = "success";
+    })
+    .catch(({ response }) => {
+      dataMonographStore.$reset();
       console.error(response);
     });
 }

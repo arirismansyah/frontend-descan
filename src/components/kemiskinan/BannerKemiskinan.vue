@@ -33,110 +33,54 @@
 
   <!-- BANNER JUMLAH KELUARGA MISKIN -->
   <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xl-3">
-      <div class="card overflow-hidden">
+    <div class="col">
+      <div class="card bg-danger img-card box-primary-shadow">
         <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <h6 class="">Total Sales</h6>
-              <h3 class="mb-2 number-font">34,516</h3>
-              <p class="text-muted mb-0">
-                <span class="text-primary"
-                  ><i class="fa fa-chevron-circle-up text-primary me-1"></i>
-                  3%</span
-                >
-                last month
-              </p>
+          <div class="d-flex">
+            <div class="text-white">
+              <h2 class="mb-0 number-font">23,536</h2>
+              <p class="text-white mb-0">Keluarga Sangat Miskin</p>
             </div>
-            <div class="col col-auto">
-              <div
-                class="counter-icon bg-primary-gradient box-shadow-primary brround ms-auto"
-              >
-                <i class="fe fe-trending-up text-white mb-5"></i>
-              </div>
+            <div class="ms-auto">
+              <i class="fa fa-group text-white fs-30 me-2 mt-2"></i>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xl-3">
-      <div class="card overflow-hidden">
+    <!-- COL END -->
+    <div class="col">
+      <div class="card bg-secondary img-card box-secondary-shadow">
         <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <h6 class="">Total Leads</h6>
-              <h3 class="mb-2 number-font">56,992</h3>
-              <p class="text-muted mb-0">
-                <span class="text-secondary"
-                  ><i class="fa fa-chevron-circle-up text-secondary me-1"></i>
-                  3%</span
-                >
-                last month
-              </p>
+          <div class="d-flex">
+            <div class="text-white">
+              <h2 class="mb-0 number-font">45,789</h2>
+              <p class="text-white mb-0">Keluarga Miskin</p>
             </div>
-            <div class="col col-auto">
-              <div
-                class="counter-icon bg-danger-gradient box-shadow-danger brround ms-auto"
-              >
-                <i class="icon icon-rocket text-white mb-5"></i>
-              </div>
+            <div class="ms-auto">
+              <i class="fa fa-group text-white fs-30 me-2 mt-2"></i>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xl-3">
-      <div class="card overflow-hidden">
+    <!-- COL END -->
+    <div class="col">
+      <div class="card bg-success img-card box-success-shadow">
         <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <h6 class="">Total Profit</h6>
-              <h3 class="mb-2 number-font">$42,567</h3>
-              <p class="text-muted mb-0">
-                <span class="text-success"
-                  ><i class="fa fa-chevron-circle-down text-success me-1"></i>
-                  0.5%</span
-                >
-                last month
-              </p>
+          <div class="d-flex">
+            <div class="text-white">
+              <h2 class="mb-0 number-font">89,786</h2>
+              <p class="text-white mb-0">Keluarga Tidak Miskin</p>
             </div>
-            <div class="col col-auto">
-              <div
-                class="counter-icon bg-secondary-gradient box-shadow-secondary brround ms-auto"
-              >
-                <i class="fe fe-dollar-sign text-white mb-5"></i>
-              </div>
+            <div class="ms-auto">
+              <i class="fa fa-group text-white fs-30 me-2 mt-2"></i>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xl-3">
-      <div class="card overflow-hidden">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <h6 class="">Total Cost</h6>
-              <h3 class="mb-2 number-font">$34,789</h3>
-              <p class="text-muted mb-0">
-                <span class="text-danger"
-                  ><i class="fa fa-chevron-circle-down text-danger me-1"></i>
-                  0.2%</span
-                >
-                last month
-              </p>
-            </div>
-            <div class="col col-auto">
-              <div
-                class="counter-icon bg-success-gradient box-shadow-success brround ms-auto"
-              >
-                <i class="fe fe-briefcase text-white mb-5"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- COL END -->
   </div>
 </template>
 
