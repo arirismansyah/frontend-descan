@@ -28,7 +28,7 @@ import LoaderElement from "../navigation/LoaderElement.vue";
 const loadingState = ref("false");
 const isLoaded = computed(() => loadingState.value === "success");
 const urlApi = inject("urlApi");
-const deskripsi = ref("");
+
 const kodeWilayahStore = useKodeWilayahStore();
 const dataMonographStore = useDataMonographStore();
 const dummy = ref(false);
@@ -65,10 +65,15 @@ async function makeChart() {
     }
   });
 
+  console.log("lk", pendudukLk);
+  console.log("pr", pendudukPr);
+
   if (
     isNaN(pendudukLk) ||
     isNaN(pendudukPr) ||
-    (pendudukLk == 0 && pendudukPr == 0)
+    pendudukLk == null ||
+    pendudukPr == null ||
+    (pendudukLk <= 0 && pendudukPr <= 0)
   ) {
     pendudukPr = 300;
     pendudukLk = 100;
@@ -94,8 +99,8 @@ async function makeChart() {
 
   new Chart(document.getElementById("demograph-chart"), config);
 }
+
 onMounted(() => {
-  // make chart
   makeChart();
 });
 </script>

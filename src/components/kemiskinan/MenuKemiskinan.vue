@@ -7,11 +7,11 @@
   </div>
 
   <div class="row">
-    <div class="col-lg-6 col-md-6">
+    <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
       <!-- TAB TINGKAT KEMISKINAN -->
       <TingkatKemiskinan></TingkatKemiskinan>
     </div>
-    <div class="col-lg-6 col-md-6">
+    <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
       <!-- TAB BANTUAN -->
       <BantuanKemiskinan></BantuanKemiskinan>
     </div>

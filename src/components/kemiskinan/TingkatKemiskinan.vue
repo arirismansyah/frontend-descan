@@ -28,31 +28,12 @@
         <div class="panel-body tabs-menu-body">
           <div class="tab-content">
             <div class="tab-pane active" id="diagramTingkat">
-              <p>
-                page editors now use Lorem Ipsum as their default model text,
-                and a search for 'lorem ipsum' will uncover many web sites still
-                in their infancy. Various versions have evolved over the years,
-                sometimes by accident, sometimes on purpose (injected humour and
-                the like
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et
-              </p>
+              <!-- chart tingkat kesejahteraan -->
+              <ChartKemiskinan></ChartKemiskinan>
             </div>
             <div class="tab-pane" id="tabelTingkat">
-              <p>
-                default model text, and a search for 'lorem ipsum' will uncover
-                many web sites still in their infancy. Various versions have
-                evolved over the years, sometimes by accident, sometimes on
-                purpose (injected humour and the like
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et
-              </p>
+              <!-- chart tingkat kesejahteraan -->
+              Table
             </div>
           </div>
         </div>
@@ -61,6 +42,5 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useMonografWilayahStore } from "@/stores/monografWilayah";
-const monographStore = useMonografWilayahStore();
+import ChartKemiskinan from "./ChartKemiskinan.vue";
 </script>

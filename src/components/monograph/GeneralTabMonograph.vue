@@ -283,13 +283,15 @@
 import axios from "axios";
 import { ref, inject, computed, onMounted } from "vue";
 import { useMonografWilayahStore } from "@/stores/monografWilayah";
-import LoaderElement from "../navigation/LoaderElement.vue";
 import { useKodeWilayahStore } from "@/stores/kodeWilayah";
+import { useDataMonographStore } from "@/stores/dataMonograph";
+
+import LoaderElement from "../navigation/LoaderElement.vue";
 
 const loadingState = ref("false");
 const isLoaded = computed(() => loadingState.value === "success");
 const urlApi = inject("urlApi");
-const monographStore = useMonografWilayahStore();
+const dataMonographStore = useMonografWilayahStore();
 const kodeWilayahStore = useKodeWilayahStore();
 
 const generalData = ref(null);

@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-header">
-      <h3 class="card-title">Penerima Bantuan</h3>
+      <h3 class="card-title">Jumlah Stunting & Potensi Stunting by Years</h3>
     </div>
     <div class="card-body">
       <LoaderElement v-if="!isLoaded"></LoaderElement>
@@ -12,11 +12,10 @@
           data belum tersedia
         </p>
       </div>
-      <canvas id="bantuan-chart"></canvas>
+      <canvas id="history-chart"></canvas>
     </div>
   </div>
 </template>
-
 <script setup lang="ts">
 // import modules
 import axios from "axios";
@@ -40,29 +39,32 @@ async function makeDummyChart() {
   loadingState.value = "success";
   isDummy.value = true;
   const data = {
-    labels: [
-      "PKH",
-      "Bantuan Sembako",
-      "PIP",
-      "KIP",
-      "Subsidi Listrik",
-      "LPG 3Kg",
-    ],
+    labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5", "Year 6"],
     datasets: [
       {
-        label: "Keluarga Penerima Bantuan",
-        data: [30, 100, 50, 23, 35, 25],
-        hoverOffset: 4,
+        label: "Jumlah Stunting & Potensi Stunting",
+        data: [20, 15, 23, 18, 22, 12],
+        pointStyle: "circle",
+        pointRadius: 10,
+        pointHoverRadius: 15,
       },
     ],
   };
 
   const config = {
-    type: "doughnut",
+    type: "line",
     data: data,
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+        },
+      },
+    },
   };
 
-  new Chart(document.getElementById("bantuan-chart"), config);
+  new Chart(document.getElementById("history-chart"), config);
 }
 
 onMounted(() => {

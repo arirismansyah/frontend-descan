@@ -67,8 +67,6 @@ async function getFasEkonomi() {
             state.fasEkonomi.push(element);
           }
         });
-        // state.fasEkonomi = data.datas;
-        console.log(state.fasEkonomi);
 
         loadingState.value = "success";
       } else {
