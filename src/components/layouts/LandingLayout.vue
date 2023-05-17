@@ -1,6 +1,6 @@
 <template>
   <LandingPage></LandingPage>
-  <PageFooter></PageFooter>
+  <PageFooter class="fixed-bottom"></PageFooter>
 </template>
 <script setup lang="ts">
 import LandingPage from "@/components/landing/LandingPage.vue";

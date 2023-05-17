@@ -88,7 +88,7 @@
 
         <div
           class="main-content"
-          style="position: absolute; top: 65%; z-index: 5; right: 0; left: 0"
+          style="position: absolute; top: 60%; z-index: 5; right: 0; left: 0"
         >
           <div class="row mx-1">
             <!-- unit logo it -->
