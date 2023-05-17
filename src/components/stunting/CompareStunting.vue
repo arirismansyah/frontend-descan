@@ -5,6 +5,12 @@
     </div>
     <div class="card-body">
       <div class="row">
+        <p class="text-muted">
+          Data yang ditampilkan merupakan <strong>data dummy</strong> karena
+          data belum tersedia
+        </p>
+      </div>
+      <div class="row">
         <div class="col">
           <div class="card overflow-hidden">
             <div class="card-body">
@@ -60,7 +66,4 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { useMonografWilayahStore } from "@/stores/monografWilayah";
-const monographStore = useMonografWilayahStore();
-</script>
+<script setup lang="ts"></script>

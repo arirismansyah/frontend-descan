@@ -7,22 +7,29 @@
       <LoaderElement v-if="!isLoaded"></LoaderElement>
       <div v-else id="map-batas">
         <!-- map leaflet -->
+        <div id="map"></div>
+        <!-- map leaflet -->
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
+// import modules
 import axios from "axios";
 import { ref, inject, computed, onMounted } from "vue";
+
+// import stores
 import { useMonografWilayahStore } from "@/stores/monografWilayah";
 import { useMapDesaStore } from "@/stores/mapDesa";
 import { useKodeWilayahStore } from "@/stores/kodeWilayah";
+
+// import components
 import LoaderElement from "../navigation/LoaderElement.vue";
-import "leaflet/dist/leaflet.css";
 
 const loadingState = ref("false");
 const isLoaded = computed(() => loadingState.value === "success");
 const urlApi = inject("urlApi");
+
 const monographStore = useMonografWilayahStore();
 const mapStore = useMapDesaStore();
 const kodeWilayahStore = useKodeWilayahStore();
@@ -37,13 +44,13 @@ async function getMap(kodeKab: string) {
       loadingState.value = "success";
       mapStore.$state;
       map.value = data.features;
-      alert(map);
+      console.log(map.value);
     }
   });
 }
 
 onMounted(() => {
-  const kodeKab = kodeWilayahStore.kode?.kode.substring(0, 4);
-  // getMap(kodeKab);
+  let kodeKab = kodeWilayahStore.kode?.kode.substring(0, 4);
+  getMap(kodeKab);
 });
 </script>

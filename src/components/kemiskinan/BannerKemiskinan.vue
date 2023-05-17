@@ -141,18 +141,26 @@ const state = reactive({
 
 async function getSumKesejahteraan() {
   loadingState.value = "false";
-  await axios
-    .get(
-      `${urlApi}keluarga_miskin/${kodeWilayahStore.kode?.kode}/sum_status_kesejahteraan`
-    )
-    .then(({ data }) => {
-      if (data.status == "success") {
-        state.sumKesejahteraan = data.datas[0];
-        loadingState.value = "success";
-      } else {
-        console.log("Data gagal disimpan, silahkan ulangi lagi");
-      }
-    });
+  try {
+    await axios
+      .get(
+        `${urlApi}keluarga_miskin/${kodeWilayahStore.kode?.kode}/sum_status_kesejahteraan`
+      )
+      .then(({ data }) => {
+        if (data.status == "success") {
+          state.sumKesejahteraan = data.datas[0];
+          loadingState.value = "success";
+        } else {
+          console.log("here");
+
+          loadingState.value = "success";
+          console.log("Data gagal disimpan, silahkan ulangi lagi");
+        }
+      });
+  } catch (error) {
+    loadingState.value = "success";
+    console.log(error);
+  }
 }
 
 onMounted(() => {

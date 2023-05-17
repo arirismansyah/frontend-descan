@@ -57,4 +57,3 @@ import MapMonograph from "@/components/monograph/MapMonograph.vue";
 
 import { ref } from "vue";
 </script>
-

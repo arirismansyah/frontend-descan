@@ -4,7 +4,7 @@
       <h3 class="card-title">Demografi</h3>
     </div>
     <div class="card-body">
-      <p v-if="dummy" class="text-muted">
+      <p v-if="isDummy" class="text-muted">
         Data yang ditampilkan saat ini adalah dummy, karena belum ada data yang
         diinput
       </p>
@@ -31,7 +31,7 @@ const urlApi = inject("urlApi");
 
 const kodeWilayahStore = useKodeWilayahStore();
 const dataMonographStore = useDataMonographStore();
-const dummy = ref(false);
+const isDummy = ref(false);
 
 const data = {
   labels: ["Perempuan", "Laki-laki"],
@@ -77,7 +77,7 @@ async function makeChart() {
   ) {
     pendudukPr = 300;
     pendudukLk = 100;
-    dummy.value = true;
+    isDummy.value = true;
   }
 
   const data = {
@@ -100,7 +100,58 @@ async function makeChart() {
   new Chart(document.getElementById("demograph-chart"), config);
 }
 
+async function makeDummyChart2() {
+  loadingState.value = "success";
+  isDummy.value = true;
+
+  const DATA_COUNT = 7;
+  const NUMBER_CFG = { count: DATA_COUNT, min: -100, max: 100 };
+
+  const labels = ["0-5", "5-15", "16-24", "25-60", "60++"];
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        label: "Laki-laki",
+        data: [12, 34, 14, 21, 54],
+        // backgroundColor: Utils.CHART_COLORS.red,
+      },
+      {
+        label: "Perempuan",
+        data: [34, 12, 22, 34, 65],
+        // backgroundColor: Utils.CHART_COLORS.blue,
+      },
+    ],
+  };
+
+  const config = {
+    type: "bar",
+    data: data,
+    options: {
+      indexAxis: "y",
+      plugins: {
+        title: {
+          display: true,
+          text: "Chart.js Bar Chart - Stacked",
+        },
+      },
+      responsive: true,
+      scales: {
+        x: {
+          stacked: true,
+        },
+        y: {
+          stacked: true,
+        },
+      },
+    },
+  };
+
+  new Chart(document.getElementById("demograph-chart2"), config);
+}
+
 onMounted(() => {
   makeChart();
+  makeDummyChart2();
 });
 </script>

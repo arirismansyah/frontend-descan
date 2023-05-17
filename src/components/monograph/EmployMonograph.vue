@@ -4,7 +4,15 @@
       <h3 class="card-title">Ketenagakerjaan</h3>
     </div>
     <div class="card-body">
-      <canvas id="employ-chart"></canvas>
+      <div class="row">
+        <p class="text-muted">
+          Data yang ditampilkan merupakan <strong>data dummy</strong> karena
+          data belum tersedia
+        </p>
+      </div>
+      <div class="row">
+        <canvas id="employ-chart"></canvas>
+      </div>
     </div>
   </div>
 </template>
