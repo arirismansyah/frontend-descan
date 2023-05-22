@@ -40,13 +40,87 @@ async function getMap() {
   let kodeWilayah = kodeWilayahStore.kode?.kode;
   let kodeKab = kodeWilayahStore.kode?.kode.substring(0, 4);
 
+  var map = leaflet.map("map");
+
+  function style(feature) {
+    return {
+      fillColor: "#009EFF",
+      weight: 2,
+      opacity: 1,
+      color: "white",
+      dashArray: "3",
+      fillOpacity: 0.7,
+    };
+  }
+
+  function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+  }
+
+  function mapInteractions(feature, layer) {
+    if (feature.properties.nmdesa) {
+      layer.bindPopup(`<table>
+        <tbody>
+          </tbody>
+        <tr>
+          <td>Id </td>
+          <td>:</td>
+          <td>
+            ${feature.properties.iddesa}
+          </td>
+        </tr>
+        <tr>
+          <td>Nama Desa</td>
+          <td>:</td>
+          <td>
+            ${feature.properties.nmdesa}
+            </td>
+        </tr>
+        <tr>
+          <td>Nama Kec</td>
+          <td>:</td>
+          <td>
+            ${feature.properties.nmkec}
+            </td>
+        </tr>
+        <tr>
+          <td>Nama Kab/Kota</td>
+          <td>:</td>
+          <td>
+            ${feature.properties.nmkab}
+            </td>
+        </tr>
+        </table>`);
+      layer.on("click", zoomToFeature);
+      layer.on("mouseover", function () {
+        this.setStyle({
+          weight: 5,
+          fillColor: "#FD8D3C",
+          dashArray: "",
+          fillOpacity: 0.7,
+        });
+        this.bringToFront();
+      });
+      layer.on("mouseout", function () {
+        this.setStyle({
+          fillColor: "#009EFF",
+          weight: 2,
+          opacity: 1,
+          color: "white",
+          dashArray: "3",
+          fillOpacity: 0.7,
+        });
+      });
+    }
+  }
+
   loadingState.value = "false";
   await axios.get(`${urlApi}geo/final_desa_${kodeKab}`).then(({ data }) => {
     if (data.features == null) {
       alert("geojson null");
     } else {
       loadingState.value = "success";
-      var map = leaflet.map("map");
+
       const tiles = leaflet
         .tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
           maxZoom: 19,
@@ -56,7 +130,10 @@ async function getMap() {
         .addTo(map);
 
       if (kodeWilayah?.length <= 4) {
-        const multipolygon = leaflet.geoJSON(data);
+        const multipolygon = leaflet.geoJSON(data, {
+          onEachFeature: mapInteractions,
+          style: style,
+        });
         multipolygon.addTo(map);
         map.fitBounds(multipolygon.getBounds());
       } else {
@@ -76,7 +153,10 @@ async function getMap() {
             }
           });
 
-          var multipolygon = leaflet.geoJSON(featureCollections);
+          var multipolygon = leaflet.geoJSON(featureCollections, {
+            onEachFeature: mapInteractions,
+            style: style,
+          });
           multipolygon.addTo(map);
           map.fitBounds(multipolygon.getBounds());
         } else {
@@ -84,7 +164,10 @@ async function getMap() {
             if (kodeWilayah == element.properties.iddesa) {
               console.log("here");
 
-              var multipolygon = leaflet.geoJSON(element);
+              var multipolygon = leaflet.geoJSON(element, {
+                onEachFeature: mapInteractions,
+                style: style,
+              });
               multipolygon.addTo(map);
               map.fitBounds(multipolygon.getBounds());
             }

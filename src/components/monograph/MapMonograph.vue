@@ -52,7 +52,7 @@ async function getMap() {
     map.fitBounds(e.target.getBounds());
   }
 
-  function yourOnEachFeatureFunction(feature, layer) {
+  function mapInteractions(feature, layer) {
     if (feature.properties.nmdesa) {
       layer.bindPopup(`<table>
         <tbody>
@@ -128,7 +128,7 @@ async function getMap() {
 
       if (kodeWilayah?.length <= 4) {
         const multipolygon = leaflet.geoJSON(data, {
-          onEachFeature: yourOnEachFeatureFunction,
+          onEachFeature: mapInteractions,
           style: style,
         });
         multipolygon.addTo(map);
@@ -150,7 +150,10 @@ async function getMap() {
             }
           });
 
-          var multipolygon = leaflet.geoJSON(featureCollections);
+          var multipolygon = leaflet.geoJSON(featureCollections, {
+            onEachFeature: mapInteractions,
+            style: style,
+          });
           multipolygon.addTo(map);
           map.fitBounds(multipolygon.getBounds());
         } else {
@@ -158,8 +161,11 @@ async function getMap() {
             if (kodeWilayah == element.properties.iddesa) {
               console.log("here");
 
-              var multipolygon = leaflet.geoJSON(element);
-              multipolygon.bindPopup(element.properties.nmdesa);
+              var multipolygon = leaflet.geoJSON(element, {
+                onEachFeature: mapInteractions,
+                style: style,
+              });
+
               multipolygon.addTo(map);
               map.fitBounds(multipolygon.getBounds());
             }
