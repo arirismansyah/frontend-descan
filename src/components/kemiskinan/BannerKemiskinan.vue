@@ -23,9 +23,9 @@
         class="btn btn-primary btn-icon text-white me-2"
       >
         <span>
-          <i class="fe fe-plus"></i>
+          <i class="fe fe-download"></i>
         </span>
-        Add Account
+        Download Data
       </a>
     </div>
   </div>

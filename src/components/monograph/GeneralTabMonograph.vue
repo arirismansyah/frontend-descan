@@ -280,14 +280,19 @@
 </template>
 
 <script setup lang="ts">
+// import modules
 import axios from "axios";
 import { ref, inject, computed, onMounted } from "vue";
+
+// import stores
 import { useMonografWilayahStore } from "@/stores/monografWilayah";
 import { useKodeWilayahStore } from "@/stores/kodeWilayah";
 import { useDataMonographStore } from "@/stores/dataMonograph";
 
+// import elements
 import LoaderElement from "../navigation/LoaderElement.vue";
 
+// const & var
 const loadingState = ref("false");
 const isLoaded = computed(() => loadingState.value === "success");
 const urlApi = inject("urlApi");
@@ -306,6 +311,7 @@ const jumlahKeluarga = ref(null);
 const jumlahPenduduk = ref(null);
 const jumlahDisabilitas = ref(null);
 
+// def function
 async function getMonograph() {
   loadingState.value = "false";
   await axios
@@ -362,6 +368,7 @@ async function getMonograph() {
     });
 }
 
+// mount
 onMounted(() => {
   getMonograph();
 });

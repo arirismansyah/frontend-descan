@@ -20,6 +20,11 @@
                 >
               </li>
               <li>
+                <a href="#topograph" class="me-1" data-bs-toggle="tab"
+                  >Topografi</a
+                >
+              </li>
+              <li>
                 <a href="#pengurus" data-bs-toggle="tab" class="me-1"
                   >Pengurus</a
                 >
@@ -42,6 +47,11 @@
             <!-- TAB CONTENT GENERAL -->
             <div class="tab-pane" id="general">
               <GeneralTabMonograph></GeneralTabMonograph>
+            </div>
+
+            <!-- TAB CONTENT TOPOGRAFI -->
+            <div class="tab-pane" id="topograph">
+              <TopographTabMonograph></TopographTabMonograph>
             </div>
 
             <!-- TAB CONTENT PENGURUS -->
@@ -138,13 +148,9 @@
   </div>
 </template>
 <script setup lang="ts">
-import axios from "axios";
-import { ref, inject, computed, onMounted } from "vue";
-import { useMonografWilayahStore } from "@/stores/monografWilayah";
-import { usePengurusStore } from "@/stores/pengurusWilayah";
-import LoaderElement from "../navigation/LoaderElement.vue";
 import DescriptionTabMonograph from "./DescriptionTabMonograph.vue";
 import GeneralTabMonograph from "./GeneralTabMonograph.vue";
+import TopographTabMonograph from "./TopographTabMonograph.vue";
 import PengurusTabMonograph from "@/components/monograph/pengurus/PengurusTabMonograph.vue";
 import SubTabFasKesehatan from "./fasilitas/SubTabFasKesehatan.vue";
 import SubTabFasPendidikan from "./fasilitas/SubTabFasPendidikan.vue";
@@ -154,6 +160,4 @@ import SubTabFasTransportasi from "./fasilitas/SubTabFasTransportasi.vue";
 import SubTabFasInfokom from "./fasilitas/SubTabFasInfokom.vue";
 import SubTabOlahraga from "./fasilitas/SubTabOlahraga.vue";
 import SubTabPemerintahan from "./fasilitas/SubTabPemerintahan.vue";
-
-const pengurusStore = usePengurusStore();
 </script>
