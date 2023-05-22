@@ -30,13 +30,6 @@
           <MapKemiskinan></MapKemiskinan>
         </div>
       </div>
-
-      <div class="row">
-        <!-- TABLE -->
-        <div class="col-lg-12 col-md-12">
-          <DaftarKeluarga></DaftarKeluarga>
-        </div>
-      </div>
     </div>
   </div>
 </template>

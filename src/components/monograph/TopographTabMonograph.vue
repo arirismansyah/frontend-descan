@@ -198,7 +198,6 @@ async function getTopo() {
     .then(({ data }) => {
       dataTopograph.value = data.datas;
       loadingState.value = "success";
-      console.log("here");
 
       if (dataTopograph.value != null) {
         dataTopograph.value.forEach((element) => {

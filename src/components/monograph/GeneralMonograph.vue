@@ -10,27 +10,47 @@
             <!-- TAB PANELS -->
             <ul class="nav panel-tabs">
               <li>
-                <a href="#deskripsi" class="active me-1" data-bs-toggle="tab"
+                <a
+                  href="#deskripsi"
+                  @click="activeTab('deskripsi')"
+                  class="active me-1"
+                  data-bs-toggle="tab"
                   >Deskripsi</a
                 >
               </li>
               <li>
-                <a href="#general" class="me-1" data-bs-toggle="tab"
+                <a
+                  href="#general"
+                  @click="activeTab('general')"
+                  class="me-1"
+                  data-bs-toggle="tab"
                   >Informasi Umum</a
                 >
               </li>
               <li>
-                <a href="#topograph" class="me-1" data-bs-toggle="tab"
+                <a
+                  href="#topograph"
+                  @click="activeTab('topograph')"
+                  class="me-1"
+                  data-bs-toggle="tab"
                   >Topografi</a
                 >
               </li>
               <li>
-                <a href="#pengurus" data-bs-toggle="tab" class="me-1"
+                <a
+                  href="#pengurus"
+                  @click="activeTab('pengurus')"
+                  data-bs-toggle="tab"
+                  class="me-1"
                   >Pengurus</a
                 >
               </li>
               <li>
-                <a href="#fasilitas" data-bs-toggle="tab" class="me-1"
+                <a
+                  href="#fasilitas"
+                  @click="activeTab('fasilitas')"
+                  data-bs-toggle="tab"
+                  class="me-1"
                   >Fasilitas Umum</a
                 >
               </li>
@@ -40,7 +60,7 @@
         <div class="panel-body tabs-menu-body">
           <div class="tab-content">
             <!-- TAB CONTENT DESC -->
-            <div class="tab-pane active" id="deskripsi">
+            <div class="tab-pane" id="deskripsi">
               <DescriptionTabMonograph></DescriptionTabMonograph>
             </div>
 
@@ -148,6 +168,10 @@
   </div>
 </template>
 <script setup lang="ts">
+// import modules
+import { ref, onMounted } from "vue";
+
+// import elements
 import DescriptionTabMonograph from "./DescriptionTabMonograph.vue";
 import GeneralTabMonograph from "./GeneralTabMonograph.vue";
 import TopographTabMonograph from "./TopographTabMonograph.vue";
@@ -160,4 +184,17 @@ import SubTabFasTransportasi from "./fasilitas/SubTabFasTransportasi.vue";
 import SubTabFasInfokom from "./fasilitas/SubTabFasInfokom.vue";
 import SubTabOlahraga from "./fasilitas/SubTabOlahraga.vue";
 import SubTabPemerintahan from "./fasilitas/SubTabPemerintahan.vue";
+
+const activeTab = ref("deskripsi");
+
+function tabActivate(tab: string) {
+  activeTab.value = tab;
+  let tabElement = document.getElementById(tab);
+  tabElement?.classList.add("active");
+}
+
+// mount
+onMounted(() => {
+  tabActivate(activeTab.value);
+});
 </script>
