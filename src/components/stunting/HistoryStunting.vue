@@ -5,24 +5,26 @@
     </div>
     <div class="card-body">
       <div class="panel panel-primary">
-        <div class="tab-menu-heading">
-          <div class="tabs-menu1">
-            <!-- Tabs -->
-            <ul class="nav panel-tabs">
-              <li>
-                <a
-                  href="#diagramHistory"
-                  class="active me-1"
-                  data-bs-toggle="tab"
-                  >Diagram</a
-                >
-              </li>
-              <li>
-                <a href="#tabelHistory" data-bs-toggle="tab" class="me-1"
-                  >Table</a
-                >
-              </li>
-            </ul>
+        <div class="wideget-user-tab">
+          <div class="tab-menu-heading">
+            <div class="tabs-menu1">
+              <!-- Tabs -->
+              <ul class="nav">
+                <li>
+                  <a
+                    href="#diagramHistory"
+                    class="active me-1"
+                    data-bs-toggle="tab"
+                    >Diagram</a
+                  >
+                </li>
+                <li>
+                  <a href="#tabelHistory" data-bs-toggle="tab" class="me-1"
+                    >Table</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="panel-body tabs-menu-body">
