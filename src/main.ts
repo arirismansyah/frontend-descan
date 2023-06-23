@@ -6,7 +6,6 @@ import router from "./router";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
-
 import "@/assets/zanex/css/style.css";
 import "@/assets/zanex/css/dark-style.css";
 import "@/assets/zanex/css/skin-modes.css";

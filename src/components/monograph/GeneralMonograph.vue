@@ -5,56 +5,58 @@
     </div>
     <div class="card-body">
       <div class="panel panel-primary">
-        <div class="tab-menu-heading">
-          <div class="tabs-menu">
-            <!-- TAB PANELS -->
-            <ul class="nav panel-tabs">
-              <li>
-                <a
-                  href="#deskripsi"
-                  @click="activeTab('deskripsi')"
-                  class="active me-1"
-                  data-bs-toggle="tab"
-                  >Deskripsi</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#general"
-                  @click="activeTab('general')"
-                  class="me-1"
-                  data-bs-toggle="tab"
-                  >Informasi Umum</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#topograph"
-                  @click="activeTab('topograph')"
-                  class="me-1"
-                  data-bs-toggle="tab"
-                  >Topografi</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#pengurus"
-                  @click="activeTab('pengurus')"
-                  data-bs-toggle="tab"
-                  class="me-1"
-                  >Pengurus</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#fasilitas"
-                  @click="activeTab('fasilitas')"
-                  data-bs-toggle="tab"
-                  class="me-1"
-                  >Fasilitas Umum</a
-                >
-              </li>
-            </ul>
+        <div class="wideget-user-tab">
+          <div class="tab-menu-heading">
+            <div class="tabs-menu1">
+              <!-- TAB PANELS -->
+              <ul class="nav">
+                <li>
+                  <a
+                    href="#deskripsi"
+                    @click="activeTab('deskripsi')"
+                    class="active me-1"
+                    data-bs-toggle="tab"
+                    >Deskripsi</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#general"
+                    @click="activeTab('general')"
+                    class="me-1"
+                    data-bs-toggle="tab"
+                    >Informasi Umum</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#topograph"
+                    @click="activeTab('topograph')"
+                    class="me-1"
+                    data-bs-toggle="tab"
+                    >Topografi</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#pengurus"
+                    @click="activeTab('pengurus')"
+                    data-bs-toggle="tab"
+                    class="me-1"
+                    >Pengurus</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#fasilitas"
+                    @click="activeTab('fasilitas')"
+                    data-bs-toggle="tab"
+                    class="me-1"
+                    >Fasilitas Umum</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="panel-body tabs-menu-body">

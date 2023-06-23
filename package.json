@@ -18,6 +18,8 @@
     "bootstrap": "^5.2.3",
     "chart.js": "^4.3.0",
     "chartjs-chart-treemap": "^2.3.0",
+    "datatables.net-bs5": "^1.13.4",
+    "datatables.net-dt": "^1.13.4",
     "datatables.net-responsive": "^2.4.1",
     "datatables.net-select": "^1.6.2",
     "datatables.net-vue3": "^2.1.0",

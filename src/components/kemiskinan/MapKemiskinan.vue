@@ -4,8 +4,17 @@
       <h3 class="card-title">Peta Keluarga Miskin</h3>
     </div>
     <div class="card-body">
-      <div id="map" style="height: 350px">
-        <LoaderElement v-if="!isLoaded"></LoaderElement>
+      <div class="row my-2">
+        <div id="map" style="height: 350px">
+          <LoaderElement v-if="!isLoaded"></LoaderElement>
+        </div>
+      </div>
+      <div class="row my-2">
+        <!-- table keluarga miskin -->
+        <div class="table-responsive">
+          <table></table>
+        </div>
+        <!-- table keluarga miskin -->
       </div>
     </div>
   </div>
@@ -16,6 +25,10 @@
 import axios from "axios";
 import { ref, inject, computed, onMounted } from "vue";
 import leaflet from "leaflet";
+import DataTable from "datatables.net-vue3";
+import DataTablesCore from "datatables.net";
+import "datatables.net-select";
+import "datatables.net-responsive";
 
 // import stores
 import { useMonografWilayahStore } from "@/stores/monografWilayah";
@@ -24,6 +37,8 @@ import { useKodeWilayahStore } from "@/stores/kodeWilayah";
 
 // import components
 import LoaderElement from "../navigation/LoaderElement.vue";
+
+DataTable.use(DataTablesCore);
 
 const loadingState = ref("false");
 const isLoaded = computed(() => loadingState.value === "success");
